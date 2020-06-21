@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @Data
-public class FilmShow {
-    private int filmShowId;
+public class Seans {
+    private int seansId;
     private LocalDateTime startTimeAndDate;
     private Movie movie;
     private FilmShowRoom filmShowRoom;

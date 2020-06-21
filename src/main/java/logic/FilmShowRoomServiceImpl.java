@@ -1,20 +1,24 @@
 package logic;
 
 import domain.FilmShowRoom;
+import domain.Seat;
 import lombok.RequiredArgsConstructor;
-import persistence.FilmShowDAO;
+import persistence.FilmShowRoomDAO;
+import persistence.SeatDAO;
 
 @RequiredArgsConstructor
 public class FilmShowRoomServiceImpl implements FilmShowRoomService {
-    private final FilmShowDAO filmShowDAO;
+    private final FilmShowRoomDAO filmShowRoomDAO;
+    private final SeatDAO seatDAO;
 
     @Override
-    public void addFilmShowRoom(FilmShowRoom filmShowRoom) {
-        FilmShowRoom filmShowRoom1 = new FilmShowRoom(Integer.parseInt(String.valueOf(filmShowRoom)));
+    public void addFilmShowRoom(int filmShowRoomId) {
+        FilmShowRoom filmShowRoom = new FilmShowRoom(filmShowRoomId);
+        filmShowRoomDAO.save(filmShowRoom);
     }
 
     @Override
-    public void addSeats(String seatId, int seatNumber, int row, FilmShowRoom filmShowRoom) {
-
+    public void addSeats(int seatId, int seatNumber, int row, FilmShowRoom filmShowRoom) {
+        Seat seat = new Seat(seatId, seatNumber,row,new FilmShowRoom(Integer.parseInt(String.valueOf(filmShowRoom))));
     }
 }

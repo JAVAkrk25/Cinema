@@ -13,7 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class FilmShowEntity {
+public class SeansEntity {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int filmShowId;
@@ -25,10 +25,10 @@ public class FilmShowEntity {
     @ManyToOne
     private FilmShowroomEntity filmShowroomEntity;
 
-    @OneToMany(mappedBy = "filmShowEntity")
+    @OneToMany(mappedBy = "seansEntity")
     private Set<ReservationEntity> reservationEntity = new HashSet<>();
 
-    public FilmShowEntity(int filmShowId, LocalDateTime startTimeAndDate, MovieEntity movie, FilmShowroomEntity filmShowroomEntity) {
+    public SeansEntity(int filmShowId, LocalDateTime startTimeAndDate, MovieEntity movie, FilmShowroomEntity filmShowroomEntity) {
         this.filmShowId = filmShowId;
         this.startTimeAndDate = startTimeAndDate;
         this.movie = movie;

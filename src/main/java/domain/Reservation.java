@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class Reservation {
     private int reservationId;
-    private FilmShow filmShow;
+    private Seans seans;
     private Client client;
     private Seat seat;
 }

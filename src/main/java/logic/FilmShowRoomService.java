@@ -3,7 +3,7 @@ package logic;
 import domain.FilmShowRoom;
 
 public interface FilmShowRoomService {
-    void addFilmShowRoom(FilmShowRoom filmShowRoom);
+    void addFilmShowRoom(int filmShowRoomId);
 
-    void addSeats(String seatId, int seatNumber, int row, FilmShowRoom filmShowRoom);
+    void addSeats(int seatId, int seatNumber, int row, FilmShowRoom filmShowRoom);
 }

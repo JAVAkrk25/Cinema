@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,7 +17,7 @@ public class FilmShowroomEntity {
     private int filmShowRoomId;
 
     @OneToMany(mappedBy = "filmShowroomEntity")
-    private Set<FilmShowEntity> filmShowEntities;
+    private Set<SeansEntity> filmShowEntities;
 
     @OneToMany(mappedBy = "filmShowroomEntity")
     private Set<SeatEntity> seats;

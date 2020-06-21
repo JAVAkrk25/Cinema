@@ -21,7 +21,7 @@ public class MovieEntity {
     private String duration;
 
     @OneToMany(mappedBy = "movie")
-    private Set<FilmShowEntity> filmShowEntities;
+    private Set<SeansEntity> filmShowEntities;
 
     public MovieEntity(int movieId, String title, String director, String duration) {
         this.movieId = movieId;

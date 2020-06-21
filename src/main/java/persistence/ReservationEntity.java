@@ -19,15 +19,15 @@ public class ReservationEntity {
     private ClientEntity clientEntity;
 
     @ManyToOne
-    private FilmShowEntity filmShowEntity;
+    private SeansEntity seansEntity;
 
     @ManyToOne
     private SeatEntity seatEntity;
 
-    public ReservationEntity(int reservationId, ClientEntity clientEntity, FilmShowEntity filmShowEntity, SeatEntity seatEntity) {
+    public ReservationEntity(int reservationId, ClientEntity clientEntity, SeansEntity seansEntity, SeatEntity seatEntity) {
         this.reservationId = reservationId;
         this.clientEntity = clientEntity;
-        this.filmShowEntity = filmShowEntity;
+        this.seansEntity = seansEntity;
         this.seatEntity = seatEntity;
     }
 }
