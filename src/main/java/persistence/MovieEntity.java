@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import java.util.HashSet;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -18,18 +15,14 @@ import java.util.Set;
 public class MovieEntity {
 
     @Id
-        private String movieId;
-        private String title;
-        private String director;
-        private String duration;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int movieId;
+    private String title;
+    private String director;
+    private String duration;
 
-    @OneToOne(mappedBy = "movie")
-    private Set<MovieEntity> movies = new HashSet<>();
+    @OneToMany(mappedBy = "movie")
+    private Set<FilmShowEntity> filmShowEntities;
 
-    public MovieEntity(String movieId, String title, String director, String duration) {
-        this.movieId = movieId;
-        this.title = title;
-        this.director = director;
-        this.duration = duration;
-    }
+
 }

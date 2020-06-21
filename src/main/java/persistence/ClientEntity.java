@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,17 +13,19 @@ import java.util.Set;
 @Getter
 @Setter
 public class ClientEntity {
+
     @Id
-    private String clientId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int clientId;
     private String name;
     private String surname;
     private String email;
-    private String phone;
+    private String phone;;
 
-    @OneToOne(mappedBy = "client")
-    private Set<ClientEntity> clients = new HashSet<>();
+    @OneToMany(mappedBy = "clientEntity")
+    private Set<ReservationEntity> reservationEntities = new HashSet<>();
 
-    public ClientEntity(String clientId, String name, String surname, String email, String phone) {
+    public ClientEntity(int clientId, String name, String surname, String email, String phone) {
         this.clientId = clientId;
         this.name = name;
         this.surname = surname;
