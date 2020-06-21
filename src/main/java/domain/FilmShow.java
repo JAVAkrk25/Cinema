@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 public class FilmShow {
-    private String filmShowId;
+    private int filmShowId;
     private LocalDateTime startTimeAndDate;
-    private String movieId;
-    private String filmShowRoomId;
+    private Movie movie;
+    private FilmShowRoom filmShowRoom;
 }

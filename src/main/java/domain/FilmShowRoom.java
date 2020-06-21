@@ -6,6 +6,6 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class FilmShowRoom {
-    private String filmShowRoomId;
+    private int filmShowRoomId;
     private String name;
 }

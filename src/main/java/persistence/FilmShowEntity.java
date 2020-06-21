@@ -1,13 +1,23 @@
 package persistence;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@NoArgsConstructor
+@Getter
+@Setter
 public class FilmShowEntity {
 
     @Id
-    private String filmShowId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int filmShowId;
 
     private LocalDateTime startTimeAndDate;
 
@@ -16,4 +26,7 @@ public class FilmShowEntity {
 
     @ManyToOne
     private FilmShowroomEntity filmShowroomEntity;
+
+    @OneToMany(mappedBy = "filmShowEntity")
+    private Set<ReservationEntity> reservationEntity = new HashSet<>();
 }

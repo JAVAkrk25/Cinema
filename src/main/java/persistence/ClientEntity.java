@@ -20,7 +20,7 @@ public class ClientEntity {
     private String name;
     private String surname;
     private String email;
-    private String phone;;
+    private String phone;
 
     @OneToMany(mappedBy = "clientEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
