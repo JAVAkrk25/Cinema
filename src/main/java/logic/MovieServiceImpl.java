@@ -20,6 +20,6 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Set<Movie> getAllMovies() {
-        return null;
+        return movieDAO.getAllMovies();
     }
 }
