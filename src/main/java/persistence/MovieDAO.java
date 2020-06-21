@@ -13,6 +13,5 @@ public interface MovieDAO {
 
     void delete(String movieId);
 
-
     Set<Movie> getAllMovies();
 }

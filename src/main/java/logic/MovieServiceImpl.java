@@ -12,7 +12,7 @@ public class MovieServiceImpl implements MovieService {
 
 
     @Override
-    public void addMovie(String movieId, String title, String director, String duration) {
+    public void addMovie(int movieId, String title, String director, String duration) {
         Movie movie = new Movie(movieId, title, director, duration);
         movieDAO.save(movie);
 

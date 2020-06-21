@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public interface MovieService {
-    void addMovie(String movieId, String title, String director, String duration);
+    void addMovie(int movieId, String title, String director, String duration);
 
 
     Set<Movie> getAllMovies();

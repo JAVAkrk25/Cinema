@@ -13,9 +13,8 @@ import java.util.Set;
 @Setter
 
 public class MovieEntity {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieId;
     private String title;
     private String director;
@@ -24,5 +23,10 @@ public class MovieEntity {
     @OneToMany(mappedBy = "movie")
     private Set<FilmShowEntity> filmShowEntities;
 
-
+    public MovieEntity(int movieId, String title, String director, String duration) {
+        this.movieId = movieId;
+        this.title = title;
+        this.director = director;
+        this.duration = duration;
+    }
 }

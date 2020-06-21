@@ -10,6 +10,4 @@ public interface ClientDAO {
 
     void delete(String clientId);
 
-
-
 }

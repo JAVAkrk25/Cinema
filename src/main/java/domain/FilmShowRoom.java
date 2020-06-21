@@ -7,5 +7,4 @@ import lombok.Data;
 @Data
 public class FilmShowRoom {
     private int filmShowRoomId;
-    private String name;
 }

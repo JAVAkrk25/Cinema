@@ -10,7 +10,7 @@ public class ClientServiceImpl implements ClientService {
     private final ClientDAO clientDAO;
 
     @Override
-    public void addClient(String id, String name, String surname, String email, String phone) {
+    public void addClient(int id, String name, String surname, String email, String phone) {
         Client client = new Client(id, name, surname, email, phone);
         clientDAO.save(client);
     }
@@ -19,6 +19,5 @@ public class ClientServiceImpl implements ClientService {
     public void delete(String clientId) {
         clientDAO.delete(clientId);
     }
-
 
 }

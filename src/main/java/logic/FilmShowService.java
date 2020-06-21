@@ -11,6 +11,4 @@ public interface FilmShowService {
 
     Set<FilmShow> getAllFilmShows(Movie movie);
 
-
-
 }
