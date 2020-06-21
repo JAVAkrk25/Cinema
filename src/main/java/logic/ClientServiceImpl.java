@@ -22,9 +22,5 @@ public class ClientServiceImpl implements ClientService {
         clientDAO.delete(clientId);
     }
 
-    @Override
-    public Set<Movie> chooseMovieName(String movieId) {
-        return clientDAO.findMovie(movieId);
-    }
 
 }

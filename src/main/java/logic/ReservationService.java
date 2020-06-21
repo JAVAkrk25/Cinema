@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface ReservationService {
 
-    Set<Reservation> getAllSeats(FilmShow filmShowId);
+    Set<Reservation> getAllSeats(FilmShow filmShow);
 
     void bookSeat(String seatId, String filmShowId, String clientId);
 

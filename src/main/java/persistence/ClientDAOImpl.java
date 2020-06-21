@@ -1,11 +1,9 @@
 package persistence;
 
 import domain.Client;
-import domain.Movie;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import java.util.Set;
 
 public class ClientDAOImpl implements ClientDAO {
     private final EntityManagerFactory emf;
@@ -60,25 +58,6 @@ public class ClientDAOImpl implements ClientDAO {
                 cl.close();
             }
         }
-    }
-
-    @Override
-    public Set<Movie> findMovie(String movieId) {
-//        EntityManager cl = null;
-//        try {
-//            cl = emf.createEntityManager();
-//            cl.getTransaction().begin();
-//            TypedQuery<MovieEntity> query = cl.createQuery("FROM Movie m WHERE m.movieId = :movieId", Movie.class);
-//            query.setParameter("movieId", movieId);
-//            Set<Movie> result = query.getResultStream().map(this::from).collect(Collectors.toSet());
-//            cl.getTransaction().commit();
-//            return result;
-//        } finally {
-//            if (cl != null) {
-//                cl.close();
-//            }
-//        }
-        return null;
     }
 
     private Client from(ClientEntity clientEntity) {
