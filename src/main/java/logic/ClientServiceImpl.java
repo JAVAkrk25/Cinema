@@ -1,11 +1,9 @@
 package logic;
 
 import domain.Client;
-import domain.Movie;
 import lombok.RequiredArgsConstructor;
 import persistence.ClientDAO;
 
-import java.util.Set;
 
 @RequiredArgsConstructor
 public class ClientServiceImpl implements ClientService {

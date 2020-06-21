@@ -3,6 +3,7 @@ package logic;
 import domain.FilmShow;
 import domain.Movie;
 
+import java.util.List;
 import java.util.Set;
 
 public interface MovieService {
