@@ -10,6 +10,6 @@ import java.util.Set;
 public interface SeansService {
     void addSeans(String seansId, LocalDateTime startTimeAndDate, Movie movie, FilmShowRoom filmShowRoom);
 
-    Set<Seans> getAllFilmShows(Movie movie);
+    Set<Seans> getAllSeans(Movie movie);
 
 }
