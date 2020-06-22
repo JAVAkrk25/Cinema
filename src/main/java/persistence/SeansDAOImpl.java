@@ -46,14 +46,15 @@ public class SeansDAOImpl implements SeansDAO {
         }
     }
 
-//    private Seans from(SeansEntity seansEntity) {
-//        return seansEntity == null ? null :
-//                new Seans(seansEntity.
-//    }
+    private Seans from(SeansEntity seansEntity) {
+        return seansEntity == null ? null :
+                new Seans(seansEntity.getFilmShowId(), seansEntity.getStartTimeAndDate(),from(seansEntity.getMovie())
+    }
 
-//    private SeansEntity from(Seans seans) {
-//        return seans == null ? null :
-//                new SeansEntity(seans.getSeansId(),seans.getStartTimeAndDate(), new Movie(seans.getMovie(),) ans.getMovie(),seans.getFilmShowRoom());
+    private SeansEntity from(Seans seans) {
+        return seans == null ? null :
+                new SeansEntity(seans.getSeansId(), seans.getStartTimeAndDate(), new Movie(seans.getMovie(), )ans.getMovie(), seans.getFilmShowRoom());
 
+    }
 }
-}
+

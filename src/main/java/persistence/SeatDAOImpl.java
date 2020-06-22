@@ -46,11 +46,11 @@ public class SeatDAOImpl implements SeatDAO{
     }
     private Seat from(SeatEntity seatEntity) {
         return seatEntity == null ? null :
-                new Seat(seatEntity.getSeatId(),seatEntity.getRow(),seatEntity.getSeatNumber(),new FilmShowRoom(seatEntity.getSeatId()));
+                new Seat(seatEntity.getSeatId(),seatEntity.getRow(),seatEntity.getSeatNumber(),from(seatEntity.getFilmShowroomEntity()));
     }
 
     private SeatEntity from(Seat seats) {
         return seats == null ? null :
-                new SeatEntity(seats.getSeatId(),seats.getRow(),seats.getSeatNumber(),new FilmShowroomEntity(seats.getSeatId()));
+                new SeatEntity(seats.getSeatId(),seats.getRow(),seats.getSeatNumber(),from(seats.getFilmShowRoom()));
     }
 }

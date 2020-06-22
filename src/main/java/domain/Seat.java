@@ -2,9 +2,10 @@ package domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import persistence.FilmShowroomEntity;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Data
 public class Seat {
     private int seatId;
