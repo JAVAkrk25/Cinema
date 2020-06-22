@@ -31,7 +31,7 @@ public class FilmShowRoomImp implements FilmShowRoomDAO {
         try {
             filmShowRo = emf.createEntityManager();
             filmShowRo.getTransaction().begin();
-            FilmShowroomEntity employeeEntity = filmShowRo.find(FilmShowroomEntity.class, filmShowRoomId);
+            FilmShowRoomEntity employeeEntity = filmShowRo.find(FilmShowRoomEntity.class, filmShowRoomId);
             if (employeeEntity != null) {
                 filmShowRo.remove(employeeEntity);
             }
@@ -43,13 +43,13 @@ public class FilmShowRoomImp implements FilmShowRoomDAO {
         }
     }
 
-    private FilmShowRoom from(FilmShowroomEntity fsr) {
+    private FilmShowRoom from(FilmShowRoomEntity fsr) {
         return fsr == null ? null :
                 new FilmShowRoom(fsr.getFilmShowRoomId());
     }
 
-    private FilmShowroomEntity from(FilmShowRoom fsr) {
+    private FilmShowRoomEntity from(FilmShowRoom fsr) {
         return fsr == null ? null :
-                new FilmShowroomEntity(fsr.getFilmShowRoomId());
+                new FilmShowRoomEntity(fsr.getFilmShowRoomId());
     }
 }

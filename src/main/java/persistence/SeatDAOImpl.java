@@ -44,9 +44,19 @@ public class SeatDAOImpl implements SeatDAO{
             }
         }
     }
+
+    FilmShowRoom from(FilmShowRoomEntity filmShowroomEntity) {
+        return null;
+    }
+
+    FilmShowRoomEntity from(FilmShowRoom filmShowroom) {
+        return null;
+    }
+
+
     private Seat from(SeatEntity seatEntity) {
         return seatEntity == null ? null :
-                new Seat(seatEntity.getSeatId(),seatEntity.getRow(),seatEntity.getSeatNumber(),from(seatEntity.getFilmShowroomEntity()));
+                new Seat(seatEntity.getSeatId(),seatEntity.getRow(),seatEntity.getSeatNumber(), from(seatEntity.getFilmShowRoomEntity()));
     }
 
     private SeatEntity from(Seat seats) {

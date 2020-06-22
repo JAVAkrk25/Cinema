@@ -1,5 +1,6 @@
 package persistence;
 
+import domain.FilmShowRoom;
 import domain.Movie;
 import domain.Seans;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class SeansDAOImpl implements SeansDAO {
         try {
             seanses = emf.createEntityManager();
             seanses.getTransaction().begin();
-            seanses.persist(from(seans));
+//            seanses.persist(from(seans));
             seanses.getTransaction().commit();
         } finally {
             if (seanses != null) {
@@ -46,15 +47,24 @@ public class SeansDAOImpl implements SeansDAO {
         }
     }
 
+    FilmShowRoom from(FilmShowRoomEntity filmShowroomEntity) {
+        return null;
+    }
+
+    FilmShowRoomEntity from(FilmShowRoom filmShowroom) {return null;    }
+
+    Movie from(MovieEntity movieEntity) {return null;}
+
+    MovieEntity form (Movie movie) {return null;}
+
     private Seans from(SeansEntity seansEntity) {
         return seansEntity == null ? null :
-                new Seans(seansEntity.getFilmShowId(), seansEntity.getStartTimeAndDate(),from(seansEntity.getMovie())
+                new Seans(seansEntity.getFilmShowId(), seansEntity.getStartTimeAndDate(),from(seansEntity.getMovie()),from(seansEntity.getFilmShowRoomEntity()));
     }
 
-    private SeansEntity from(Seans seans) {
-        return seans == null ? null :
-                new SeansEntity(seans.getSeansId(), seans.getStartTimeAndDate(), new Movie(seans.getMovie(), )ans.getMovie(), seans.getFilmShowRoom());
-
-    }
+//    private SeansEntity from(Seans seans) {
+//        return seans == null ? null :
+//                new SeansEntity(seans.getSeansId(), seans.getStartTimeAndDate(), from(seans.getMovie()), seans.getFilmShowRoom());
+//    }
 }
 

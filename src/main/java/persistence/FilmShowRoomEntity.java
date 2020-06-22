@@ -11,7 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class FilmShowroomEntity {
+public class FilmShowRoomEntity {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int filmShowRoomId;
@@ -22,7 +22,7 @@ public class FilmShowroomEntity {
     @OneToMany(mappedBy = "filmShowroomEntity")
     private Set<SeatEntity> seats;
 
-    public FilmShowroomEntity(int filmShowRoomId) {
+    public FilmShowRoomEntity(int filmShowRoomId) {
         this.filmShowRoomId = filmShowRoomId;
     }
 }

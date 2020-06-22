@@ -21,16 +21,16 @@ public class SeatEntity {
     private int seatNumber;
 
     @ManyToOne
-    private FilmShowroomEntity filmShowroomEntity;
+    private FilmShowRoomEntity filmShowRoomEntity;
 
     @OneToMany (mappedBy = "seatEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
 
-    public SeatEntity(int seatId, int row, int seatNumber, FilmShowroomEntity filmShowroomEntity) {
+    public SeatEntity(int seatId, int row, int seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
         this.seatId = seatId;
         this.row = row;
         this.seatNumber = seatNumber;
-        this.filmShowroomEntity = filmShowroomEntity;
+        this.filmShowRoomEntity = filmShowRoomEntity;
     }
 
 }
