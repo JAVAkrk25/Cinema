@@ -1,8 +1,9 @@
-package persistence;
+package persistence.client;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import persistence.reservation.ReservationEntity;
 
 import javax.persistence.*;
 import java.util.HashSet;

@@ -2,7 +2,7 @@ package logic;
 
 import domain.Client;
 import lombok.RequiredArgsConstructor;
-import persistence.ClientDAO;
+import persistence.client.ClientDAO;
 
 
 @RequiredArgsConstructor

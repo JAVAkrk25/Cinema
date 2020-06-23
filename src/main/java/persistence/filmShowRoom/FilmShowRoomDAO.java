@@ -1,4 +1,4 @@
-package persistence;
+package persistence.filmShowRoom;
 
 import domain.FilmShowRoom;
 

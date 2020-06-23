@@ -2,7 +2,7 @@ package logic;
 
 import domain.Movie;
 import lombok.RequiredArgsConstructor;
-import persistence.MovieDAO;
+import persistence.movie.MovieDAO;
 
 import java.util.Set;
 

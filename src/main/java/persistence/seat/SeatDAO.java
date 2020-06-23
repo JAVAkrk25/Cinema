@@ -1,4 +1,4 @@
-package persistence;
+package persistence.seat;
 
 import domain.Seat;
 

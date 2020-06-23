@@ -1,8 +1,11 @@
-package persistence;
+package persistence.seans;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import persistence.reservation.ReservationEntity;
+import persistence.filmShowRoom.FilmShowRoomEntity;
+import persistence.movie.MovieEntity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

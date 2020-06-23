@@ -1,4 +1,4 @@
-package persistence;
+package persistence.movie;
 
 import domain.Client;
 import domain.Movie;

@@ -1,7 +1,9 @@
-package persistence;
+package persistence.filmShowRoom;
 
 import domain.FilmShowRoom;
 import lombok.RequiredArgsConstructor;
+import persistence.filmShowRoom.FilmShowRoomDAO;
+import persistence.filmShowRoom.FilmShowRoomEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,8 +1,10 @@
-package persistence;
+package persistence.filmShowRoom;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import persistence.seans.SeansEntity;
+import persistence.seat.SeatEntity;
 
 import javax.persistence.*;
 import java.util.Set;

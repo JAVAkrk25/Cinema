@@ -1,11 +1,10 @@
-package persistence;
+package persistence.movie;
 import domain.Movie;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
-import java.util.List;
 import java.util.Set;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class MovieDAOImpl implements MovieDAO {

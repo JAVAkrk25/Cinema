@@ -1,8 +1,9 @@
-package persistence;
+package persistence.movie;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import persistence.seans.SeansEntity;
 
 import javax.persistence.*;
 import java.util.Set;

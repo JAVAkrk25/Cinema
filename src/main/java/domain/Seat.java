@@ -2,7 +2,6 @@ package domain;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import persistence.FilmShowRoomEntity;
 
 @RequiredArgsConstructor
 @Data

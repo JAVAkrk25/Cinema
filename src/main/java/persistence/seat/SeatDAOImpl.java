@@ -1,14 +1,16 @@
-package persistence;
+package persistence.seat;
 
 import domain.FilmShowRoom;
 import domain.Seat;
 import lombok.RequiredArgsConstructor;
+import persistence.filmShowRoom.FilmShowRoomEntity;
+import utils.Mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 @RequiredArgsConstructor
-public class SeatDAOImpl implements SeatDAO{
+public class SeatDAOImpl implements SeatDAO {
 
     private final EntityManagerFactory emf;
 
@@ -18,7 +20,7 @@ public class SeatDAOImpl implements SeatDAO{
         try {
             seats = emf.createEntityManager();
             seats.getTransaction().begin();
-            seats.persist(from(seat));
+            seats.persist(Mapper.from(seat));
             seats.getTransaction().commit();
         } finally {
             if (seats != null) {
@@ -51,14 +53,4 @@ public class SeatDAOImpl implements SeatDAO{
         return null;
     }
 
-
-    private Seat from(SeatEntity seatEntity) {
-        return seatEntity == null ? null :
-                new Seat(seatEntity.getSeatId(),seatEntity.getRow(),seatEntity.getSeatNumber(), from(seatEntity.getFilmShowRoomEntity()));
-    }
-
-    private SeatEntity from(Seat seats) {
-        return seats == null ? null :
-                new SeatEntity(seats.getSeatId(),seats.getRow(),seats.getSeatNumber(),from(seats.getFilmShowRoom()));
-    }
 }
