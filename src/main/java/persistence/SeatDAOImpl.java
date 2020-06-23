@@ -45,9 +45,7 @@ public class SeatDAOImpl implements SeatDAO{
         }
     }
 
-    FilmShowRoom from(FilmShowRoomEntity filmShowroomEntity) {
-        return null;
-    }
+    FilmShowRoom from(FilmShowRoomEntity filmShowroomEntity) {return null;}
 
     FilmShowRoomEntity from(FilmShowRoom filmShowroom) {
         return null;
