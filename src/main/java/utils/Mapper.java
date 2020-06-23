@@ -1,7 +1,9 @@
 package utils;
 
-import domain.Seans;
-import domain.Seat;
+import domain.*;
+import persistence.client.ClientEntity;
+import persistence.filmShowRoom.FilmShowRoomEntity;
+import persistence.movie.MovieEntity;
 import persistence.seans.SeansEntity;
 import persistence.seat.SeatEntity;
 
@@ -19,15 +21,43 @@ public class Mapper {
                 new SeatEntity(seats.getSeatId(), seats.getRow(), seats.getSeatNumber(), from(seats.getFilmShowRoom()));
     }
 
-    private Seans from(SeansEntity seansEntity) {
+    public static Seans from(SeansEntity seansEntity) {
         return seansEntity == null ? null :
                 new Seans(seansEntity.getFilmShowId(), seansEntity.getStartTimeAndDate(), from(seansEntity.getMovie()), from(seansEntity.getFilmShowRoomEntity()));
     }
 
-    private SeansEntity from(Seans seans) {
+    public static SeansEntity from(Seans seans) {
         return seans == null ? null :
                 new SeansEntity(seans.getSeansId(), seans.getStartTimeAndDate(), from(seans.getMovie()), from(seans.getFilmShowRoom()));
     }
 
+    public static Movie from(MovieEntity movieEntity) {
+        return movieEntity == null ? null :
+                new Movie(movieEntity.getMovieId(), movieEntity.getTitle(), movieEntity.getDirector(), movieEntity.getDuration());
+    }
 
+    public static MovieEntity from(Movie movie) {
+        return movie == null ? null :
+                new MovieEntity(movie.getMovieId(), movie.getTitle(), movie.getDirector(), movie.getDuration());
+    }
+
+    public static Client from(ClientEntity clientEntity) {
+        return clientEntity == null ? null :
+                new Client(clientEntity.getClientId(), clientEntity.getName(), clientEntity.getSurname(), clientEntity.getEmail(), clientEntity.getPhone());
+    }
+
+    public static ClientEntity from(Client client) {
+        return client == null ? null :
+                new ClientEntity(client.getClientId(), client.getName(), client.getSurname(), client.getEmail(), client.getPhone());
+    }
+
+    public static FilmShowRoom from(FilmShowRoomEntity fsr) {
+        return fsr == null ? null :
+                new FilmShowRoom(fsr.getFilmShowRoomId());
+    }
+
+    public static FilmShowRoomEntity from(FilmShowRoom fsr) {
+        return fsr == null ? null :
+                new FilmShowRoomEntity(fsr.getFilmShowRoomId());
+    }
 }

@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import persistence.filmShowRoom.FilmShowRoomDAO;
 import persistence.seat.SeatDAO;
 
+import java.util.Set;
+
 @RequiredArgsConstructor
 public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     private final FilmShowRoomDAO filmShowRoomDAO;
@@ -20,5 +22,10 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     @Override
     public void addSeats(int seatId, int seatNumber, int row, FilmShowRoom filmShowRoom) {
         Seat seat = new Seat(seatId, seatNumber,row,new FilmShowRoom(Integer.parseInt(String.valueOf(filmShowRoom))));
+    }
+
+    @Override
+    public Set<Seat> getAllSeats(int filmShowRoomId) {
+        return seatDAO.getAllSeats(filmShowRoomId);
     }
 }

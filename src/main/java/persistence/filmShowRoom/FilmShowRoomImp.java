@@ -4,6 +4,7 @@ import domain.FilmShowRoom;
 import lombok.RequiredArgsConstructor;
 import persistence.filmShowRoom.FilmShowRoomDAO;
 import persistence.filmShowRoom.FilmShowRoomEntity;
+import utils.Mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,14 +12,13 @@ import javax.persistence.EntityManagerFactory;
 public class FilmShowRoomImp implements FilmShowRoomDAO {
     private final EntityManagerFactory emf;
 
-
     @Override
     public void save(FilmShowRoom filmShowRoom) {
         EntityManager filmShowRo = null;
         try {
             filmShowRo = emf.createEntityManager();
             filmShowRo.getTransaction().begin();
-            filmShowRo.persist(from(filmShowRoom));
+            filmShowRo.persist(Mapper.from(filmShowRoom));
             filmShowRo.getTransaction().commit();
         } finally {
             if (filmShowRo != null) {
@@ -45,13 +45,5 @@ public class FilmShowRoomImp implements FilmShowRoomDAO {
         }
     }
 
-    private FilmShowRoom from(FilmShowRoomEntity fsr) {
-        return fsr == null ? null :
-                new FilmShowRoom(fsr.getFilmShowRoomId());
-    }
 
-    private FilmShowRoomEntity from(FilmShowRoom fsr) {
-        return fsr == null ? null :
-                new FilmShowRoomEntity(fsr.getFilmShowRoomId());
-    }
 }

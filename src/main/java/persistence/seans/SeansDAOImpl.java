@@ -26,7 +26,7 @@ public class SeansDAOImpl implements SeansDAO {
         try {
             seanses = emf.createEntityManager();
             seanses.getTransaction().begin();
-            seanses.persist(Mapper.from(seans);
+            seanses.persist(Mapper.from(seans));
             seanses.getTransaction().commit();
         } finally {
             if (seanses != null) {
@@ -36,7 +36,7 @@ public class SeansDAOImpl implements SeansDAO {
     }
 
     @Override
-    public void delate(Seans seansId) {
+    public void delete(Seans seansId) {
         EntityManager seanses = null;
         try {
             seanses = emf.createEntityManager();
@@ -61,7 +61,7 @@ public class SeansDAOImpl implements SeansDAO {
             emseans.getTransaction().begin();
             TypedQuery<SeansEntity> query = emseans.createQuery("FROM SeansEntity s WHERE s.movie.movieId =:movieId", SeansEntity.class);
             query.setParameter("movieId", movie.getMovieId());
-            Set<Seans> result = query.getResultStream().map(this::from).collect(Collectors.toSet());
+            Set<Seans> result = query.getResultStream().map(Mapper::from).collect(Collectors.toSet());
             emseans.getTransaction().commit();
             return result;
         } finally {
@@ -70,23 +70,5 @@ public class SeansDAOImpl implements SeansDAO {
             }
         }
     }
-
-    FilmShowRoom from(FilmShowRoomEntity filmShowroomEntity) {
-        return null;
-    }
-
-    FilmShowRoomEntity from(FilmShowRoom filmShowroom) {
-        return null;
-    }
-
-    Movie from(MovieEntity movieEntity) {
-        return null;
-    }
-
-    MovieEntity from(Movie movie) {
-        return null;
-    }
-
-
 }
 

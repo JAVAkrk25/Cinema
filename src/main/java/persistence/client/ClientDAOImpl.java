@@ -1,6 +1,7 @@
 package persistence.client;
 
 import domain.Client;
+import utils.Mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,7 +19,7 @@ public class ClientDAOImpl implements ClientDAO {
         try {
             cl = emf.createEntityManager();
             cl.getTransaction().begin();
-            cl.persist(from(client));
+            cl.persist(Mapper.from(client));
             cl.getTransaction().commit();
         } finally {
             if (cl != null) {
@@ -33,7 +34,7 @@ public class ClientDAOImpl implements ClientDAO {
         try {
             cl = emf.createEntityManager();
             cl.getTransaction().begin();
-            cl.merge(from(client));
+            cl.merge(Mapper.from(client));
             cl.getTransaction().commit();
         } finally {
             if (cl != null) {
@@ -59,16 +60,4 @@ public class ClientDAOImpl implements ClientDAO {
             }
         }
     }
-
-    private Client from(ClientEntity clientEntity) {
-        return clientEntity == null ? null :
-                new Client(clientEntity.getClientId(), clientEntity.getName(), clientEntity.getSurname(), clientEntity.getEmail(), clientEntity.getPhone());
-    }
-
-    private ClientEntity from(Client client) {
-        return client == null ? null :
-                new ClientEntity(client.getClientId(), client.getName(), client.getSurname(), client.getEmail(), client.getPhone());
-    }
-
-
 }

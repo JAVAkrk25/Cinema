@@ -10,12 +10,10 @@ import java.util.Set;
 public class MovieServiceImpl implements MovieService {
     private final MovieDAO movieDAO;
 
-
     @Override
     public void addMovie(int movieId, String title, String director, String duration) {
         Movie movie = new Movie(movieId, title, director, duration);
         movieDAO.save(movie);
-
     }
 
     @Override

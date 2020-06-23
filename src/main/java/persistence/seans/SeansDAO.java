@@ -8,7 +8,7 @@ import java.util.Set;
 public interface SeansDAO {
     void save (Seans seans);
 
-    void delate (Seans seansId);
+    void delete (Seans seansId);
 
     Set<Seans> getAllSeans(Movie movie);
 }

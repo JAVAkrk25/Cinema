@@ -1,13 +1,18 @@
 package persistence.seat;
 
 import domain.FilmShowRoom;
+import domain.Seans;
 import domain.Seat;
 import lombok.RequiredArgsConstructor;
 import persistence.filmShowRoom.FilmShowRoomEntity;
+import persistence.seans.SeansEntity;
 import utils.Mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class SeatDAOImpl implements SeatDAO {
@@ -47,10 +52,21 @@ public class SeatDAOImpl implements SeatDAO {
         }
     }
 
-    FilmShowRoom from(FilmShowRoomEntity filmShowroomEntity) {return null;}
-
-    FilmShowRoomEntity from(FilmShowRoom filmShowroom) {
-        return null;
+    @Override
+    public Set<Seat> getAllSeats(int filmShowRoomId) {
+        EntityManager emseat = null;
+        try {
+            emseat = emf.createEntityManager();
+            emseat.getTransaction().begin();
+            TypedQuery<SeatEntity> query = emseat.createQuery("FROM SeatEntity s WHERE s.filmShowRoomEntity.filmShowRoomId =:filmShowRoomId", SeatEntity.class);
+            query.setParameter("filmShowRoomId", filmShowRoomId);
+            Set<Seat> result = query.getResultStream().map(Mapper::from).collect(Collectors.toSet());
+            emseat.getTransaction().commit();
+            return result;
+        } finally {
+            if (emseat != null) {
+                emseat.close();
+            }
+        }
     }
-
 }

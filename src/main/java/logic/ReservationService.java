@@ -11,7 +11,7 @@ public interface ReservationService {
     void bookSeat(String clientId, String filmShowId, String seatId);
 
 
-    Set<Seat> getAvaiableSeats(Seans seans);
+    Set<Seat> getAvailableSeats(Seans seans);
     //wyciagnac info o wszytkich dostepnych w danej sali
     //wyciagnac krzesła z rezerwacji na dany seans dokonane i zwrocic roznice tych zbiorow
 
