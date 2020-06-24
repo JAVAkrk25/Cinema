@@ -1,14 +1,13 @@
 package logic;
 
 import domain.Seans;
-import domain.Reservation;
 import domain.Seat;
 
 import java.util.Set;
 
 public interface ReservationService {
 
-    void bookSeat(int reservationId, String clientId, String seansId, String seatId);
+    void bookSeat(Integer clientId, Integer seansId, Integer seatId);
 
     Set<Seat> getAvailableSeats(Seans seans);
     //wyciagnac info o wszytkich dostepnych w danej sali

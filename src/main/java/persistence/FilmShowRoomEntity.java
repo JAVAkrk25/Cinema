@@ -1,10 +1,8 @@
-package persistence.filmShowRoom;
+package persistence;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import persistence.seans.SeansEntity;
-import persistence.seat.SeatEntity;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -16,7 +14,7 @@ import java.util.Set;
 public class FilmShowRoomEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int filmShowRoomId;
+    private Integer filmShowRoomId;
 
     @OneToMany(mappedBy = "filmShowRoomEntity")
     private Set<SeansEntity> filmShowEntities;
@@ -24,7 +22,7 @@ public class FilmShowRoomEntity {
     @OneToMany(mappedBy = "filmShowRoomEntity")
     private Set<SeatEntity> seats;
 
-    public FilmShowRoomEntity(int filmShowRoomId) {
+    public FilmShowRoomEntity(Integer filmShowRoomId) {
         this.filmShowRoomId = filmShowRoomId;
     }
 }

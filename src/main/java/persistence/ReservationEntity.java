@@ -1,14 +1,8 @@
-package persistence.reservation;
+package persistence;
 
-import domain.Client;
-import domain.Seans;
-import domain.Seat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import persistence.client.ClientEntity;
-import persistence.seans.SeansEntity;
-import persistence.seat.SeatEntity;
 
 import javax.persistence.*;
 
@@ -19,7 +13,7 @@ import javax.persistence.*;
 public class ReservationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int reservationId;
+    private Integer reservationId;
 
     @ManyToOne
     private SeansEntity seansEntity;
@@ -30,7 +24,7 @@ public class ReservationEntity {
     @ManyToOne
     private SeatEntity seatEntity;
 
-    public ReservationEntity(int reservationId, SeansEntity seansEntity, ClientEntity clientEntity, SeatEntity seatEntity) {
+    public ReservationEntity(SeansEntity seansEntity, ClientEntity clientEntity, SeatEntity seatEntity) {
         this.reservationId = reservationId;
         this.seansEntity = seansEntity;
         this.clientEntity = clientEntity;

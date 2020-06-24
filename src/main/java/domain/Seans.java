@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 
 public class Seans {
-    private int seansId;
+    private Integer seansId;
     private LocalDateTime startTimeAndDate;
     private Movie movie;
     private FilmShowRoom filmShowRoom;

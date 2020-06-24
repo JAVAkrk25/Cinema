@@ -3,7 +3,7 @@ package logic;
 import domain.FilmShowRoom;
 import domain.Seat;
 import lombok.RequiredArgsConstructor;
-import persistence.seat.SeatDAO;
+import persistence.SeatDAO;
 
 @RequiredArgsConstructor
 public class SeatServiceImpl implements SeatService {

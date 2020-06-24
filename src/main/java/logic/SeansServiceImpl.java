@@ -4,7 +4,7 @@ import domain.FilmShowRoom;
 import domain.Movie;
 import domain.Seans;
 import lombok.RequiredArgsConstructor;
-import persistence.seans.SeansDAO;
+import persistence.SeansDAO;
 
 import java.time.LocalDateTime;
 import java.util.Set;

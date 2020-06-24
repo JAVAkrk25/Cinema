@@ -1,12 +1,12 @@
 package utils;
 
 import domain.*;
-import persistence.client.ClientEntity;
-import persistence.filmShowRoom.FilmShowRoomEntity;
-import persistence.movie.MovieEntity;
-import persistence.reservation.ReservationEntity;
-import persistence.seans.SeansEntity;
-import persistence.seat.SeatEntity;
+import persistence.ClientEntity;
+import persistence.FilmShowRoomEntity;
+import persistence.MovieEntity;
+import persistence.ReservationEntity;
+import persistence.SeansEntity;
+import persistence.SeatEntity;
 
 public class Mapper {
     private Mapper() {

@@ -1,8 +1,7 @@
 package destop;
 
-import domain.Client;
-import persistence.client.ClientDAO;
-import persistence.client.ClientDAOImpl;
+import persistence.ClientDAO;
+import persistence.ClientDAOImpl;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

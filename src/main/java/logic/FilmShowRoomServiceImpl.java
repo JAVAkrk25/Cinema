@@ -3,8 +3,7 @@ package logic;
 import domain.FilmShowRoom;
 import domain.Seat;
 import lombok.RequiredArgsConstructor;
-import persistence.filmShowRoom.FilmShowRoomDAO;
-import persistence.seat.SeatDAO;
+import persistence.FilmShowRoomDAO;
 
 import java.util.Set;
 

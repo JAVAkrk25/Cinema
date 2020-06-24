@@ -1,9 +1,8 @@
-package persistence.client;
+package persistence;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import persistence.reservation.ReservationEntity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -17,7 +16,7 @@ public class ClientEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int clientId;
+    private Integer clientId;
     private String name;
     private String surname;
     private String email;
@@ -26,7 +25,7 @@ public class ClientEntity {
     @OneToMany(mappedBy = "clientEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
 
-    public ClientEntity(int clientId, String name, String surname, String email, String phone) {
+    public ClientEntity(Integer clientId, String name, String surname, String email, String phone) {
         this.clientId = clientId;
         this.name = name;
         this.surname = surname;

@@ -1,10 +1,10 @@
-package persistence.seat;
+package persistence;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import persistence.reservation.ReservationEntity;
-import persistence.filmShowRoom.FilmShowRoomEntity;
+import persistence.ReservationEntity;
+import persistence.FilmShowRoomEntity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -18,7 +18,7 @@ public class SeatEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int seatId;
+    private Integer seatId;
 
     @Column(name = "seat_row")
     private int row;
@@ -30,7 +30,7 @@ public class SeatEntity {
     @OneToMany (mappedBy = "seatEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
 
-    public SeatEntity(int seatId, int row, int seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
+    public SeatEntity(Integer seatId, int row, int seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
         this.seatId = seatId;
         this.row = row;
         this.seatNumber = seatNumber;

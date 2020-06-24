@@ -1,11 +1,11 @@
-package persistence.seans;
+package persistence;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import persistence.reservation.ReservationEntity;
-import persistence.filmShowRoom.FilmShowRoomEntity;
-import persistence.movie.MovieEntity;
+import persistence.ReservationEntity;
+import persistence.FilmShowRoomEntity;
+import persistence.MovieEntity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -19,7 +19,7 @@ import java.util.Set;
 public class SeansEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int seansId;
+    private Integer seansId;
     private LocalDateTime startTimeAndDate;
 
     @ManyToOne
@@ -31,8 +31,8 @@ public class SeansEntity {
     @OneToMany(mappedBy = "seansEntity")
     private Set<ReservationEntity> reservationEntity = new HashSet<>();
 
-    public SeansEntity(int filmShowId, LocalDateTime startTimeAndDate, MovieEntity movie, FilmShowRoomEntity filmShowRoomEntity) {
-        this.seansId = filmShowId;
+    public SeansEntity(Integer seansId, LocalDateTime startTimeAndDate, MovieEntity movie, FilmShowRoomEntity filmShowRoomEntity) {
+        this.seansId = seansId;
         this.startTimeAndDate = startTimeAndDate;
         this.movie = movie;
         this.filmShowRoomEntity = filmShowRoomEntity;

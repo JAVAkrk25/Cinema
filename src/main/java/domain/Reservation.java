@@ -6,7 +6,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class Reservation {
-    private int reservationId;
+    private Integer reservationId;
     private Seans seans;
     private Client client;
     private Seat seat;
