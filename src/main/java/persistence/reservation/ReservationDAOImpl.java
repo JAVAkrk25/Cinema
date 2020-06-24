@@ -1,14 +1,20 @@
 package persistence.reservation;
 
 import domain.Reservation;
+import domain.Seans;
+import domain.Seat;
 import lombok.RequiredArgsConstructor;
+import persistence.seat.SeatEntity;
 import utils.Mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public class ReservationDAOImpl implements ReservationDAO{
+public class ReservationDAOImpl implements ReservationDAO {
 
     private final EntityManagerFactory emf;
 
@@ -58,5 +64,28 @@ public class ReservationDAOImpl implements ReservationDAO{
                 reservation.close();
             }
         }
+    }
+
+    @Override
+    public Set<Seat> getBookedSeats(Seans seans) {
+        EntityManager seanss = null;
+        try {
+            seanss = emf.createEntityManager();
+            seanss.getTransaction().begin();
+            TypedQuery<SeatEntity> query = seanss.createQuery("FROM SeatEntity s WHERE s.seansEntity.seansId =:seansId", SeatEntity.class);
+            query.setParameter("seansId", seans.getSeansId());
+            Set<Seat> result = query.getResultStream().map(Mapper::from).collect(Collectors.toSet());
+            seanss.getTransaction().commit();
+            return result;
+        } finally {
+            if (seanss != null) {
+                seanss.close();
+            }
+        }
+    }
+
+    @Override
+    public Set<Seat> getAvailableSeats(Seans seans) {
+        return null;
     }
 }

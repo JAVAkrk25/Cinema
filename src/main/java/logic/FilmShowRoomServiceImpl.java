@@ -11,7 +11,6 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     private final FilmShowRoomDAO filmShowRoomDAO;
-    private final SeatDAO seatDAO;
 
     @Override
     public void addFilmShowRoom(int filmShowRoomId) {
@@ -26,6 +25,6 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
 
     @Override
     public Set<Seat> getAllSeats(int filmShowRoomId) {
-        return seatDAO.getAllSeats(filmShowRoomId);
+        return filmShowRoomDAO.getAllSeats(filmShowRoomId);
     }
 }

@@ -24,7 +24,7 @@ public class Mapper {
 
     public static Seans from(SeansEntity seansEntity) {
         return seansEntity == null ? null :
-                new Seans(seansEntity.getFilmShowId(), seansEntity.getStartTimeAndDate(), from(seansEntity.getMovie()), from(seansEntity.getFilmShowRoomEntity()));
+                new Seans(seansEntity.getSeansId(), seansEntity.getStartTimeAndDate(), from(seansEntity.getMovie()), from(seansEntity.getFilmShowRoomEntity()));
     }
 
     public static SeansEntity from(Seans seans) {

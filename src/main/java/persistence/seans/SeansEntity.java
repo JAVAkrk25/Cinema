@@ -19,7 +19,7 @@ import java.util.Set;
 public class SeansEntity {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int filmShowId;
+    private int seansId;
     private LocalDateTime startTimeAndDate;
 
     @ManyToOne
@@ -32,7 +32,7 @@ public class SeansEntity {
     private Set<ReservationEntity> reservationEntity = new HashSet<>();
 
     public SeansEntity(int filmShowId, LocalDateTime startTimeAndDate, MovieEntity movie, FilmShowRoomEntity filmShowRoomEntity) {
-        this.filmShowId = filmShowId;
+        this.seansId = filmShowId;
         this.startTimeAndDate = startTimeAndDate;
         this.movie = movie;
         this.filmShowRoomEntity = filmShowRoomEntity;
