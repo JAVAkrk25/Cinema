@@ -17,8 +17,10 @@ import java.util.Set;
 public class SeatEntity {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int seatId;
+
+    @Column(name = "seat_row")
     private int row;
     private int seatNumber;
 

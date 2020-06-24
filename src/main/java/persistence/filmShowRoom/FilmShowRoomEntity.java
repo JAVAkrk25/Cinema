@@ -15,13 +15,13 @@ import java.util.Set;
 @Setter
 public class FilmShowRoomEntity {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int filmShowRoomId;
 
-    @OneToMany(mappedBy = "filmShowroomEntity")
+    @OneToMany(mappedBy = "filmShowRoomEntity")
     private Set<SeansEntity> filmShowEntities;
 
-    @OneToMany(mappedBy = "filmShowroomEntity")
+    @OneToMany(mappedBy = "filmShowRoomEntity")
     private Set<SeatEntity> seats;
 
     public FilmShowRoomEntity(int filmShowRoomId) {

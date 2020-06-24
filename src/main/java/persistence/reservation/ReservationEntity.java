@@ -18,7 +18,7 @@ import javax.persistence.*;
 @Setter
 public class ReservationEntity {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reservationId;
 
     @ManyToOne

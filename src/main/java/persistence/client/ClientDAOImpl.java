@@ -14,6 +14,11 @@ public class ClientDAOImpl implements ClientDAO {
     }
 
     @Override
+    public Client findById(int id) {
+        return null;
+    }
+
+    @Override
     public void save(Client client) {
         EntityManager cl = null;
         try {

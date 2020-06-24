@@ -16,7 +16,7 @@ import java.util.Set;
 public class ClientEntity {
 
     @Id
- //   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int clientId;
     private String name;
     private String surname;
