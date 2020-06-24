@@ -12,7 +12,7 @@ public class Runner {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("cinema");
         ClientDAO clientDAO = new ClientDAOImpl(emf);
 
-        Client client1 = new Client(1, "Jan", "Kowlaski", "j.k@em.pl", "6666666");
+        Client client1 = new Client( 1,"Jan", "Kowlaski", "j.k@em.pl", "6666666");
         clientDAO.save(client1);
 
     }

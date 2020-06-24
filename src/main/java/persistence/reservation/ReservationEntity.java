@@ -1,5 +1,8 @@
 package persistence.reservation;
 
+import domain.Client;
+import domain.Seans;
+import domain.Seat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,18 +22,18 @@ public class ReservationEntity {
     private int reservationId;
 
     @ManyToOne
-    private ClientEntity clientEntity;
+    private SeansEntity seansEntity;
 
     @ManyToOne
-    private SeansEntity seansEntity;
+    private ClientEntity clientEntity;
 
     @ManyToOne
     private SeatEntity seatEntity;
 
-    public ReservationEntity(int reservationId, ClientEntity clientEntity, SeansEntity seansEntity, SeatEntity seatEntity) {
+    public ReservationEntity(int reservationId, SeansEntity seansEntity, ClientEntity clientEntity, SeatEntity seatEntity) {
         this.reservationId = reservationId;
-        this.clientEntity = clientEntity;
         this.seansEntity = seansEntity;
+        this.clientEntity = clientEntity;
         this.seatEntity = seatEntity;
     }
 }

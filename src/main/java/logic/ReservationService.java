@@ -8,8 +8,7 @@ import java.util.Set;
 
 public interface ReservationService {
 
-    void bookSeat(String clientId, String filmShowId, String seatId);
-
+    void bookSeat(int reservationId, String clientId, String seansId, String seatId);
 
     Set<Seat> getAvailableSeats(Seans seans);
     //wyciagnac info o wszytkich dostepnych w danej sali
@@ -17,6 +16,5 @@ public interface ReservationService {
 
     Set<Seat> getBookedSeats(Seans seans);
     // wyciagnac krzesla z rezerwacji na dany seans
-
 
 }

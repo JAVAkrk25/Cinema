@@ -4,6 +4,7 @@ import domain.*;
 import persistence.client.ClientEntity;
 import persistence.filmShowRoom.FilmShowRoomEntity;
 import persistence.movie.MovieEntity;
+import persistence.reservation.ReservationEntity;
 import persistence.seans.SeansEntity;
 import persistence.seat.SeatEntity;
 
@@ -59,5 +60,15 @@ public class Mapper {
     public static FilmShowRoomEntity from(FilmShowRoom fsr) {
         return fsr == null ? null :
                 new FilmShowRoomEntity(fsr.getFilmShowRoomId());
+    }
+
+    public static Reservation from(ReservationEntity reservationEntity) {
+        return reservationEntity == null ? null :
+                new Reservation(reservationEntity.getReservationId(), from(reservationEntity.getSeansEntity()), from(reservationEntity.getClientEntity()), from(reservationEntity.getSeatEntity()));
+    }
+
+    public static ReservationEntity from(Reservation reservation) {
+        return reservation == null ? null :
+                new ReservationEntity(reservation.getReservationId(), from(reservation.getSeans()), from(reservation.getClient()), from(reservation.getSeat()));
     }
 }
