@@ -14,6 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "Seat")
 public class SeatEntity {
 
     @Id
@@ -21,8 +22,8 @@ public class SeatEntity {
     private Integer seatId;
 
     @Column(name = "seat_row")
-    private int row;
-    private int seatNumber;
+    private Integer row;
+    private Integer seatNumber;
 
     @ManyToOne
     private FilmShowRoomEntity filmShowRoomEntity;
@@ -30,11 +31,10 @@ public class SeatEntity {
     @OneToMany (mappedBy = "seatEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
 
-    public SeatEntity(Integer seatId, int row, int seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
+    public SeatEntity(Integer seatId, Integer row, Integer seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
         this.seatId = seatId;
         this.row = row;
         this.seatNumber = seatNumber;
         this.filmShowRoomEntity = filmShowRoomEntity;
     }
-
 }

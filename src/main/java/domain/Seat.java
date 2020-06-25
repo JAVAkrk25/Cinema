@@ -10,4 +10,10 @@ public class Seat {
     private int row;
     private int seatNumber;
     private FilmShowRoom filmShowRoom;
+
+    public Seat(int row, int seatNumber, FilmShowRoom filmShowRoom) {
+        this.row = row;
+        this.seatNumber = seatNumber;
+        this.filmShowRoom = filmShowRoom;
+    }
 }

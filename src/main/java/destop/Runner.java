@@ -1,7 +1,11 @@
 package destop;
 
+import domain.Client;
+import logic.ClientService;
+import logic.ClientServiceImpl;
 import persistence.ClientDAO;
 import persistence.ClientDAOImpl;
+import persistence.ClientEntity;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -11,8 +15,8 @@ public class Runner {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("cinema");
         ClientDAO clientDAO = new ClientDAOImpl(emf);
 
-//        Client client1 = new Client( 1,"Jan", "Kowlaski", "j.k@em.pl", "6666666");
-//        clientDAO.save(client1);
-
+        ClientService clientService = new ClientServiceImpl(clientDAO);
+        clientService.addClient("Janina", "Nowak", "janina.nowak@jmail.pl", "999666666");
+        
     }
 }

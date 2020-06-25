@@ -13,13 +13,12 @@ import java.util.stream.Collectors;
 
 public class SeatDAOImpl extends  AbstractEntityDao<SeatEntity> implements SeatDAO {
 
-
     public SeatDAOImpl(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory, SeatEntity.class);
     }
 
     @Override
-    public Set<SeatEntity> getAllSeats(int filmShowRoomId) {
+    public Set<SeatEntity> getAllSeats(Integer filmShowRoomId) {
         EntityManager emseat = null;
         try {
             emseat = entityManagerFactory.createEntityManager();

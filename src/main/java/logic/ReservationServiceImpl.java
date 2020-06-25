@@ -34,6 +34,8 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public Set<Seat> getBookedSeats(Seans seans) {
-        return null;
+        return reservationDAO.getBookedSeats(Mapper.from(seans))
+                .stream().map(Mapper::from)
+                .collect(Collectors.toSet());
     }
 }

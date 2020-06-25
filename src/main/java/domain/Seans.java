@@ -13,4 +13,10 @@ public class Seans {
     private LocalDateTime startTimeAndDate;
     private Movie movie;
     private FilmShowRoom filmShowRoom;
+
+    public Seans(LocalDateTime startTimeAndDate, Movie movie, FilmShowRoom filmShowRoom) {
+        this.startTimeAndDate = startTimeAndDate;
+        this.movie = movie;
+        this.filmShowRoom = filmShowRoom;
+    }
 }

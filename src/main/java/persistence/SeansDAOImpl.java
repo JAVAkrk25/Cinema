@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 
 public class SeansDAOImpl extends AbstractEntityDao<SeansEntity> implements SeansDAO {
 
-
     public SeansDAOImpl(EntityManagerFactory entityManagerFactory) {
         super(entityManagerFactory, SeansEntity.class);
     }

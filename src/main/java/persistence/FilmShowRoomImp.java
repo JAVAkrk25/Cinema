@@ -17,7 +17,7 @@ public class FilmShowRoomImp extends AbstractEntityDao<FilmShowRoomEntity> imple
     }
 
     @Override
-    public Set<SeatEntity> getAllSeats(int filmShowRoomId) {
+    public Set<SeatEntity> getAllSeats(Integer filmShowRoomId) {
         EntityManager filmShowRoom = null;
         try {
             filmShowRoom = entityManagerFactory.createEntityManager();

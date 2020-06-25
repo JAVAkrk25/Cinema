@@ -6,5 +6,5 @@ import java.util.Set;
 
 public interface SeatDAO extends  EntityDAO<SeatEntity> {
 
-    Set<SeatEntity> getAllSeats(int filmShowRoomId);
+    Set<SeatEntity> getAllSeats(Integer filmShowRoomId);
 }

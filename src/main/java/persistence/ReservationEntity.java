@@ -10,6 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "Reservation")
 public class ReservationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +26,6 @@ public class ReservationEntity {
     private SeatEntity seatEntity;
 
     public ReservationEntity(SeansEntity seansEntity, ClientEntity clientEntity, SeatEntity seatEntity) {
-        this.reservationId = reservationId;
         this.seansEntity = seansEntity;
         this.clientEntity = clientEntity;
         this.seatEntity = seatEntity;

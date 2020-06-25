@@ -11,4 +11,9 @@ public class Movie {
     private String director;
     private String duration;
 
+    public Movie(String title, String director, String duration) {
+        this.title = title;
+        this.director = director;
+        this.duration = duration;
+    }
 }

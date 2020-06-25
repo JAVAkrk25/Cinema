@@ -11,6 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "Film Showroom")
 public class FilmShowRoomEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
