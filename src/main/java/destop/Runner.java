@@ -1,8 +1,9 @@
 package destop;
 
 import domain.Client;
-import persistence.ClientDAO;
-import persistence.ClientDAOImpl;
+import domain.FilmShowRoom;
+import logic.*;
+import persistence.*;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -12,8 +13,27 @@ public class Runner {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("cinema");
         ClientDAO clientDAO = new ClientDAOImpl(emf);
 
-        Client client1 = new Client(1, "Jan", "Kowlaski", "j.k@em.pl", "6666666");
-        clientDAO.save(client1);
+        ClientService clientService = new ClientServiceImpl(clientDAO);
+        clientService.addClient("Janina", "Nowak", "janina.nowak@jmail.pl", "999666666");
+        clientService.addClient("Andrzej", "Mickiewicz", "andrzej.miki@jmail.pl", "666000666");
+        clientService.addClient("Juliusz", "Słowacki", "juliusz.slowacki@jmail.pl", "666666666");
+
+        SeatDAO seatDAO = new SeatDAOImpl(emf);
+        SeatService seatService = new SeatServiceImpl(seatDAO);
+        seatService.addSeats(1,1,new FilmShowRoom(1));
+        seatService.addSeats(1,2,new FilmShowRoom(1));
+        seatService.addSeats(1,3,new FilmShowRoom(1));
+        seatService.addSeats(1,4,new FilmShowRoom(1));
+        seatService.addSeats(1,5,new FilmShowRoom(1));
+
+
+        FilmShowRoomDAO filmShowRoomDAO = new FilmShowRoomImp(emf);
+        FilmShowRoomService filmShowRoomService = new FilmShowRoomServiceImpl(filmShowRoomDAO,seatDAO);
+        filmShowRoomService.addFilmShowRoom(1);
+        filmShowRoomService.addFilmShowRoom(2);
+        filmShowRoomService.addFilmShowRoom(3);
+
+        filmShowRoomService.getAllSeats(1);
 
     }
 }

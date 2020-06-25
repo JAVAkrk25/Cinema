@@ -1,9 +1,11 @@
 package persistence;
 
 import domain.FilmShowRoom;
+import domain.Seat;
 
-public interface FilmShowRoomDAO {
-    void save (FilmShowRoom filmShowRoom);
+import java.util.Set;
 
-    void delete (String filmShowRoomId);
+public interface FilmShowRoomDAO extends EntityDAO<FilmShowRoomEntity> {
+
+    Set<SeatEntity> getAllSeats(Integer filmShowRoomId);
 }

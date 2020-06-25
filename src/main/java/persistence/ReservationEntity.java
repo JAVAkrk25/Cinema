@@ -10,24 +10,24 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "Reservation")
 public class ReservationEntity {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int reservationId;
-
-    @ManyToOne
-    private ClientEntity clientEntity;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer reservationId;
 
     @ManyToOne
     private SeansEntity seansEntity;
 
     @ManyToOne
+    private ClientEntity clientEntity;
+
+    @ManyToOne
     private SeatEntity seatEntity;
 
-    public ReservationEntity(int reservationId, ClientEntity clientEntity, SeansEntity seansEntity, SeatEntity seatEntity) {
-        this.reservationId = reservationId;
-        this.clientEntity = clientEntity;
+    public ReservationEntity(SeansEntity seansEntity, ClientEntity clientEntity, SeatEntity seatEntity) {
         this.seansEntity = seansEntity;
+        this.clientEntity = clientEntity;
         this.seatEntity = seatEntity;
     }
 }

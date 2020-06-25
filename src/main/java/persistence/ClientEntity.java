@@ -12,11 +12,12 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "Client")
 public class ClientEntity {
 
     @Id
- //   @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int clientId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer clientId;
     private String name;
     private String surname;
     private String email;
@@ -25,7 +26,7 @@ public class ClientEntity {
     @OneToMany(mappedBy = "clientEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
 
-    public ClientEntity(int clientId, String name, String surname, String email, String phone) {
+    public ClientEntity(Integer clientId, String name, String surname, String email, String phone) {
         this.clientId = clientId;
         this.name = name;
         this.surname = surname;

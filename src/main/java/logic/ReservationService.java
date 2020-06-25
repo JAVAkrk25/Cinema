@@ -1,14 +1,16 @@
 package logic;
 
 import domain.Seans;
-import domain.Reservation;
+import domain.Seat;
 
 import java.util.Set;
 
 public interface ReservationService {
 
-    Set<Reservation> getAllSeats(Seans seans);
+    void bookSeat(Integer clientId, Integer seansId, Integer seatId);
 
-    void bookSeat(String seatId, String filmShowId, String clientId);
+    Set<Seat> getAvailableSeats(Seans seans);
+
+    Set<Seat> getBookedSeats(Seans seans);
 
 }

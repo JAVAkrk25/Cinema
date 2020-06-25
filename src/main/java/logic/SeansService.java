@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 public interface SeansService {
-    void addSeans(String seansId, LocalDateTime startTimeAndDate, Movie movie, FilmShowRoom filmShowRoom);
+    void addSeans(LocalDateTime startTimeAndDate, Movie movie, FilmShowRoom filmShowRoom);
 
     Set<Seans> getAllSeans(Movie movie);
 

@@ -11,11 +11,11 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-
+@Table(name = "Movie")
 public class MovieEntity {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int movieId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer movieId;
     private String title;
     private String director;
     private String duration;
@@ -23,7 +23,7 @@ public class MovieEntity {
     @OneToMany(mappedBy = "movie")
     private Set<SeansEntity> filmShowEntities;
 
-    public MovieEntity(int movieId, String title, String director, String duration) {
+    public MovieEntity(Integer movieId, String title, String director, String duration) {
         this.movieId = movieId;
         this.title = title;
         this.director = director;

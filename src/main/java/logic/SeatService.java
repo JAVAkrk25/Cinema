@@ -1,5 +1,7 @@
 package logic;
 
-public interface SeatService {
+import domain.FilmShowRoom;
 
+public interface SeatService {
+    void addSeats(Integer row, Integer seatNumber, FilmShowRoom filmShowRoom);
 }

@@ -1,9 +1,11 @@
 package persistence;
 
+import domain.Movie;
 import domain.Seans;
 
-public interface SeansDAO {
-    void save (Seans seans);
+import java.util.Set;
 
-    void delate (Seans seansId);
+public interface SeansDAO extends EntityDAO<SeansEntity> {
+
+    Set<SeansEntity> getAllSeans(MovieEntity movie);
 }

@@ -1,55 +1,38 @@
 package persistence;
 
-import domain.FilmShowRoom;
-import lombok.RequiredArgsConstructor;
+import domain.Seat;
+;
+import utils.Mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-@RequiredArgsConstructor
-public class FilmShowRoomImp implements FilmShowRoomDAO {
-    private final EntityManagerFactory emf;
+import javax.persistence.TypedQuery;
+import java.util.Set;
+import java.util.stream.Collectors;
 
+public class FilmShowRoomImp extends AbstractEntityDao<FilmShowRoomEntity> implements FilmShowRoomDAO {
+
+    public FilmShowRoomImp(EntityManagerFactory entityManagerFactory) {
+        super(entityManagerFactory, FilmShowRoomEntity.class);
+    }
 
     @Override
-    public void save(FilmShowRoom filmShowRoom) {
-        EntityManager filmShowRo = null;
+    public Set<SeatEntity> getAllSeats(Integer filmShowRoomId) {
+        EntityManager filmShowRoom = null;
         try {
-            filmShowRo = emf.createEntityManager();
-            filmShowRo.getTransaction().begin();
-            filmShowRo.persist(from(filmShowRoom));
-            filmShowRo.getTransaction().commit();
+            filmShowRoom = entityManagerFactory.createEntityManager();
+            filmShowRoom.getTransaction().begin();
+            TypedQuery<SeatEntity> query = filmShowRoom.createQuery("FROM SeatEntity s WHERE s.filmShowRoomEntity.filmShowRoomId =:filmShowRoomId", SeatEntity.class);
+            query.setParameter("filmShowRoomId", filmShowRoomId);
+            Set<SeatEntity> result = query.getResultStream().collect(Collectors.toSet());
+            filmShowRoom.getTransaction().commit();
+            return result;
         } finally {
-            if (filmShowRo != null) {
-                filmShowRo.close();
+            if (filmShowRoom != null) {
+                filmShowRoom.close();
             }
         }
     }
 
-    @Override
-    public void delete(String filmShowRoomId) {
-        EntityManager filmShowRo = null;
-        try {
-            filmShowRo = emf.createEntityManager();
-            filmShowRo.getTransaction().begin();
-            FilmShowroomEntity employeeEntity = filmShowRo.find(FilmShowroomEntity.class, filmShowRoomId);
-            if (employeeEntity != null) {
-                filmShowRo.remove(employeeEntity);
-            }
-            filmShowRo.getTransaction().commit();
-        } finally {
-            if (filmShowRo != null) {
-                filmShowRo.close();
-            }
-        }
-    }
 
-    private FilmShowRoom from(FilmShowroomEntity fsr) {
-        return fsr == null ? null :
-                new FilmShowRoom(fsr.getFilmShowRoomId());
-    }
-
-    private FilmShowroomEntity from(FilmShowRoom fsr) {
-        return fsr == null ? null :
-                new FilmShowroomEntity(fsr.getFilmShowRoomId());
-    }
 }

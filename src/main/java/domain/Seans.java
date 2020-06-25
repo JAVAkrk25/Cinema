@@ -1,8 +1,5 @@
 package domain;
 
-
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -12,8 +9,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 
 public class Seans {
-    private int seansId;
+    private Integer seansId;
     private LocalDateTime startTimeAndDate;
     private Movie movie;
     private FilmShowRoom filmShowRoom;
+
+    public Seans(LocalDateTime startTimeAndDate, Movie movie, FilmShowRoom filmShowRoom) {
+        this.startTimeAndDate = startTimeAndDate;
+        this.movie = movie;
+        this.filmShowRoom = filmShowRoom;
+    }
 }
