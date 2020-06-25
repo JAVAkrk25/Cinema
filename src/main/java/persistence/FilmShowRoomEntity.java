@@ -11,19 +11,19 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "Film Showroom")
+@Table(name = "FilmShowroom")
 public class FilmShowRoomEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer filmShowRoomId;
 
     @OneToMany(mappedBy = "filmShowRoomEntity")
-    private Set<SeansEntity> filmShowEntities;
+    private Set<SeansEntity> seansEntity;
 
     @OneToMany(mappedBy = "filmShowRoomEntity")
     private Set<SeatEntity> seats;
 
-    public FilmShowRoomEntity(Integer filmShowRoomId) {
+      public FilmShowRoomEntity(Integer filmShowRoomId) {
         this.filmShowRoomId = filmShowRoomId;
     }
 }

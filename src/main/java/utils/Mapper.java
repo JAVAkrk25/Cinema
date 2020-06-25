@@ -39,7 +39,7 @@ public class Mapper {
 
     public static MovieEntity from(Movie movie) {
         return movie == null ? null :
-                new MovieEntity(movie.getMovieId(), movie.getTitle(), movie.getDirector(), movie.getDuration());
+                new MovieEntity(movie.getMovieId(),movie.getTitle(), movie.getDirector(), movie.getDuration());
     }
 
     public static Client from(ClientEntity clientEntity) {
