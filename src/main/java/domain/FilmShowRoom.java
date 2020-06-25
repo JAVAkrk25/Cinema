@@ -7,4 +7,7 @@ import lombok.Data;
 @Data
 public class FilmShowRoom {
     private Integer filmShowRoomId;
+
+    public FilmShowRoom() {
+    }
 }

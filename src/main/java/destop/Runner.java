@@ -19,21 +19,21 @@ public class Runner {
         clientService.addClient("Juliusz", "Słowacki", "juliusz.slowacki@jmail.pl", "666666666");
 
         SeatDAO seatDAO = new SeatDAOImpl(emf);
-        SeatService seatService = new SeatServiceImpl(seatDAO);
-        seatService.addSeats(1,1,new FilmShowRoom(1));
-        seatService.addSeats(1,2,new FilmShowRoom(1));
-        seatService.addSeats(1,3,new FilmShowRoom(1));
-        seatService.addSeats(1,4,new FilmShowRoom(1));
-        seatService.addSeats(1,5,new FilmShowRoom(1));
-
 
         FilmShowRoomDAO filmShowRoomDAO = new FilmShowRoomImp(emf);
-        FilmShowRoomService filmShowRoomService = new FilmShowRoomServiceImpl(filmShowRoomDAO,seatDAO);
-        filmShowRoomService.addFilmShowRoom(1);
-        filmShowRoomService.addFilmShowRoom(2);
-        filmShowRoomService.addFilmShowRoom(3);
+        FilmShowRoomService filmShowRoomService = new FilmShowRoomServiceImpl(filmShowRoomDAO, seatDAO);
+        filmShowRoomService.addFilmShowRoom();
+        filmShowRoomService.addFilmShowRoom();
+        filmShowRoomService.addFilmShowRoom();
 
-        filmShowRoomService.getAllSeats(1);
+        SeatService seatService = new SeatServiceImpl(seatDAO, filmShowRoomDAO);
+        seatService.addSeats(1, 1, 1);
+        seatService.addSeats(1, 2, 1);
+        seatService.addSeats(1, 3, 1);
+        seatService.addSeats(1, 4, 1);
+        seatService.addSeats(1, 5, 1);
+
+        System.out.println(filmShowRoomService.getAllSeats(1));
 
     }
 }

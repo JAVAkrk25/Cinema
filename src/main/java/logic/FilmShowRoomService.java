@@ -6,7 +6,7 @@ import domain.Seat;
 import java.util.Set;
 
 public interface FilmShowRoomService {
-    void addFilmShowRoom(Integer filmShowRoomId);
+    void addFilmShowRoom();
 
     void addSeats(Integer seatId, Integer seatNumber, Integer row, FilmShowRoom filmShowRoomId);
 

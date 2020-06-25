@@ -18,8 +18,8 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     private final SeatDAO seatDAO;
 
     @Override
-    public void addFilmShowRoom(Integer filmShowRoomId) {
-        FilmShowRoom filmShowRoom = new FilmShowRoom(filmShowRoomId);
+    public void addFilmShowRoom() {
+        FilmShowRoom filmShowRoom = new FilmShowRoom();
         filmShowRoomDAO.save(Mapper.from(filmShowRoom));
     }
 
