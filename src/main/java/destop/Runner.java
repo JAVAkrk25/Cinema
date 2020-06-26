@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 
 public class Runner {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("cinema");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("SqtyJ7nmGK");
         ClientDAO clientDAO = new ClientDAOImpl(emf);
 
         ClientService clientService = new ClientServiceImpl(clientDAO);
