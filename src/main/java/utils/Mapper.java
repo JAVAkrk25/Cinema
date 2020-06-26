@@ -34,12 +34,12 @@ public class Mapper {
 
     public static Movie from(MovieEntity movieEntity) {
         return movieEntity == null ? null :
-                new Movie(movieEntity.getMovieId(), movieEntity.getTitle(), movieEntity.getDirector(), movieEntity.getDuration());
+                new Movie(movieEntity.getMovieId(), movieEntity.getTitle(), movieEntity.getDirector(), movieEntity.getDescription());
     }
 
     public static MovieEntity from(Movie movie) {
         return movie == null ? null :
-                new MovieEntity(movie.getMovieId(),movie.getTitle(), movie.getDirector(), movie.getDuration());
+                new MovieEntity(movie.getMovieId(),movie.getTitle(), movie.getDirector(), movie.getDescription());
     }
 
     public static Client from(ClientEntity clientEntity) {

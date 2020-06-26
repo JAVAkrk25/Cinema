@@ -1,6 +1,10 @@
 package view.consol;
 
+import logic.ClientService;
+import logic.ClientServiceImpl;
+import persistence.ClientDAO;
 import view.consol.graphicsPack.CinemaHallSeats;
+import view.consol.logicPack.ClientService.AddClientMenuEntry;
 import view.consol.logicPack.MenuFactory;
 
 public class RunnerTestMenu {
@@ -29,6 +33,9 @@ public class RunnerTestMenu {
                 "(Mieczysław Stoor).");
         MenuFactory.getEmptyLine();
         MenuFactory.getFullLine();
+
+        MenuFactory.getEmptyLine();
+
 
         System.out.print("\n\n\n");
 

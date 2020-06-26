@@ -24,9 +24,10 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     }
 
     @Override
-    public void addSeats(Integer seatId, Integer seatNumber, Integer row, FilmShowRoom filmShowRoom) {
-        Seat seat = new Seat(seatId, seatNumber, row, filmShowRoom);
-        seatDAO.save(Mapper.from(seat));
+    public void addSeats(Integer row, Integer seatNumber, Integer filmShowRoomId) {
+        FilmShowRoomEntity filmShowRoom = filmShowRoomDAO.findById(filmShowRoomId);
+        SeatEntity seat = new SeatEntity(row, seatNumber, filmShowRoom);
+        seatDAO.save(seat);
     }
 
     @Override

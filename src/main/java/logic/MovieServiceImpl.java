@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import persistence.MovieDAO;
 import utils.Mapper;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -14,8 +13,8 @@ public class MovieServiceImpl implements MovieService {
     private final MovieDAO movieDAO;
 
     @Override
-    public void addMovie(String title, String director, String duration) {
-        Movie movie = new Movie(title, director, duration);
+    public void addMovie(String title, String director, String description) {
+        Movie movie = new Movie(title, director, description);
         movieDAO.save(Mapper.from(movie));
     }
 

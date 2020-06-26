@@ -18,15 +18,15 @@ public class MovieEntity {
     private Integer movieId;
     private String title;
     private String director;
-    private String duration;
+    private String description;
 
     @OneToMany(mappedBy = "movie")
     private Set<SeansEntity> filmShowEntities;
 
-    public MovieEntity(Integer movieId, String title, String director, String duration) {
+    public MovieEntity(Integer movieId, String title, String director, String description) {
         this.movieId = movieId;
         this.title = title;
         this.director = director;
-        this.duration = duration;
+        this.description = description;
     }
 }

@@ -9,11 +9,11 @@ public class Movie {
     private Integer movieId;
     private String title;
     private String director;
-    private String duration;
+    private String description;
 
-    public Movie(String title, String director, String duration) {
+    public Movie(String title, String director, String description) {
         this.title = title;
         this.director = director;
-        this.duration = duration;
+        this.description = description;
     }
 }
