@@ -19,7 +19,7 @@ public class Mapper {
 
     public static SeatEntity from(Seat seats) {
         return seats == null ? null :
-                new SeatEntity(seats.getSeatId(), seats.getRow(), seats.getSeatNumber(), from(seats.getFilmShowRoom()));
+                new SeatEntity(seats.getRow(), seats.getSeatNumber(), from(seats.getFilmShowRoom()));
     }
 
     public static Seans from(SeansEntity seansEntity) {

@@ -31,8 +31,7 @@ public class SeatEntity {
     @OneToMany (mappedBy = "seatEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
 
-    public SeatEntity(Integer seatId, Integer row, Integer seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
-        this.seatId = seatId;
+    public SeatEntity( Integer row, Integer seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
         this.row = row;
         this.seatNumber = seatNumber;
         this.filmShowRoomEntity = filmShowRoomEntity;
