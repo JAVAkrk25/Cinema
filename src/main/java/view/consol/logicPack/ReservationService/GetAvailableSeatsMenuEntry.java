@@ -16,6 +16,11 @@ public class GetAvailableSeatsMenuEntry implements InterfaceMenuEntry {
     }
 
     @Override
+    public void printMenu() {
+
+    }
+
+    @Override
     public String menuEntryName() {
         return "Wyświetlanie dostępnych miejsc na seansie.";
     }
