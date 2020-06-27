@@ -13,4 +13,5 @@ public class UserContext {
     private Seans chosenSeans;
     private String choice;
 
+
 }

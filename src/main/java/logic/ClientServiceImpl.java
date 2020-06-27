@@ -6,6 +6,8 @@ import persistence.ClientDAO;
 import persistence.ClientEntity;
 import utils.Mapper;
 
+import java.util.stream.Collectors;
+
 
 @RequiredArgsConstructor
 public class ClientServiceImpl implements ClientService {
@@ -23,6 +25,12 @@ public class ClientServiceImpl implements ClientService {
         if (found != null) {
             clientDAO.delete(found);
         }
+    }
+
+    @Override
+    public Client findByEmail(String email) {
+        return Mapper.from(clientDAO.findByEmail(email));
+
     }
 
 }

@@ -24,4 +24,11 @@ public class MovieServiceImpl implements MovieService {
                 .stream().map(Mapper::from)
                 .collect(Collectors.toSet());
     }
+
+    @Override
+    public Movie findByMovieTitle(String title) {
+        return Mapper.from(movieDAO.findByMovieTitle(title));
+    }
+
+
 }

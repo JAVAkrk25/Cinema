@@ -71,4 +71,5 @@ public class Mapper {
         return reservation == null ? null :
                 new ReservationEntity(from(reservation.getSeans()), from(reservation.getClient()), from(reservation.getSeat()));
     }
+
 }

@@ -1,6 +1,7 @@
 package logic;
 
 import domain.FilmShowRoom;
+import domain.Movie;
 import domain.Seat;
 
 import java.util.Set;
@@ -13,4 +14,8 @@ public interface FilmShowRoomService {
     Set<Seat> getAllSeats(Integer filmShowRoomId); //na postawie nr sali zwroci nam wszystkie mozliwe miejsca w sali, czyli kolekcje dostepnych dla sali siedzen
 
     FilmShowRoom getFilmShowRoom(Integer id);
+
+    FilmShowRoom findById (FilmShowRoom filmShowRoomId);
+
+
 }
