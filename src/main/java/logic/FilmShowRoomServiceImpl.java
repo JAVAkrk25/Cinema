@@ -9,6 +9,7 @@ import persistence.FilmShowRoomEntity;
 import persistence.SeatDAO;
 import persistence.SeatEntity;
 import utils.Mapper;
+import view.consol.logicPack.InterfaceMenuEntry;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -44,7 +45,7 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     }
 
     @Override
-    public FilmShowRoom findById(FilmShowRoom filmShowRoomId) {
+    public FilmShowRoom findById(Integer filmShowRoomId) {
         return Mapper.from(filmShowRoomDAO.findById(filmShowRoomId));
     }
 

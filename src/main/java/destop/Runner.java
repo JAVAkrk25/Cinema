@@ -5,6 +5,10 @@ import domain.Movie;
 import logic.*;
 import persistence.*;
 import view.consol.logicPack.ClientService.AddClientMenuEntry;
+import view.consol.logicPack.FilmShowRoomService.AddSeatsMenuEntry;
+import view.consol.logicPack.MovieService.AddMovieMenuEntry;
+import view.consol.logicPack.SeansService.AddSeansMenuEntry;
+import view.consol.logicPack.SeansService.GetAllSeansMenuEntry;
 import view.consol.logicPack.UserContext;
 
 import javax.persistence.EntityManagerFactory;
@@ -64,9 +68,18 @@ public class Runner {
             seansService.addSeans(LocalDateTime.parse("2020-10-11T11:11:00"), krzyżacy.get(), filmShowRoom);
         }
 
+//        Działa :)
+//        AddClientMenuEntry addClientMenuEntry = new AddClientMenuEntry(clientService);
+//        addClientMenuEntry.options(new UserContext());
 
-        AddClientMenuEntry addClientMenuEntry = new AddClientMenuEntry(clientService);
-        addClientMenuEntry.options(new UserContext());
+//
+//         Działa :)
+//        AddMovieMenuEntry addMovieMenuEntry = new AddMovieMenuEntry(movieService);
+//        addMovieMenuEntry.options(new UserContext());
+
+        AddSeatsMenuEntry addSeatsMenuEntry = new AddSeatsMenuEntry(filmShowRoomService);
+        addSeatsMenuEntry.options(new UserContext());
+
 
 
     }

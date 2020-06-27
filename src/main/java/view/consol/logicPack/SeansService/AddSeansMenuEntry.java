@@ -2,6 +2,7 @@ package view.consol.logicPack.SeansService;
 
 import domain.FilmShowRoom;
 import logic.ClientService;
+import logic.FilmShowRoomService;
 import logic.MovieService;
 import logic.SeansService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class AddSeansMenuEntry implements InterfaceMenuEntry {
 
     private final SeansService seansService;
     private final MovieService movieService;
-    private final FilmShowRoom filmShowRoom;
+    private final FilmShowRoomService filmShowRoomService;
 
 
     @Override
@@ -29,12 +30,12 @@ public class AddSeansMenuEntry implements InterfaceMenuEntry {
         MenuFactory.getEmptyLine();
         String element = scanner.nextLine();
         String[] split = element.split(",");
-//        if (split.length == 3){
-//            seansService.addSeans(LocalDateTime.parse(split[0].trim()), movieService.findByMovieTitle(split[1].trim()), filmShowRoom.  split[2].trim());
-//        }else {
-//            MenuFactory.getEmptyLine();
-//            MenuFactory.getTitleLine("Błędne dane.");
-//        }
+        if (split.length == 3){
+            seansService.addSeans(LocalDateTime.parse(split[0].trim()), movieService.findByMovieTitle(split[1].trim()), filmShowRoomService.findById(Integer.parseInt(split[2].trim())));
+        }else {
+            MenuFactory.getEmptyLine();
+            MenuFactory.getTitleLine("Błędne dane.");
+        }
     }
 
     @Override

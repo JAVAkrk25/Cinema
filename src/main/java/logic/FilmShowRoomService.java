@@ -15,7 +15,7 @@ public interface FilmShowRoomService {
 
     FilmShowRoom getFilmShowRoom(Integer id);
 
-    FilmShowRoom findById (FilmShowRoom filmShowRoomId);
+    FilmShowRoom findById (Integer filmShowRoomId);
 
 
 }
