@@ -7,5 +7,7 @@ public interface InterfaceMenuEntry {
 
     void options(UserContext userContext);
 
+    void printMenu();
+
     String menuEntryName();
 }

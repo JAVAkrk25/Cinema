@@ -11,6 +11,7 @@ public class UserContext {
 
     private Movie chosenMovie;
     private Seans chosenSeans;
+    private String choice;
 
 
 }

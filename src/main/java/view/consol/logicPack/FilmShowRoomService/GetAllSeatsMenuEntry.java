@@ -31,6 +31,11 @@ public class GetAllSeatsMenuEntry implements InterfaceMenuEntry {
     }
 
     @Override
+    public void printMenu() {
+
+    }
+
+    @Override
     public String menuEntryName() {
         return "Wyświetl wszystkie miejsca w sali kinowej.";
     }

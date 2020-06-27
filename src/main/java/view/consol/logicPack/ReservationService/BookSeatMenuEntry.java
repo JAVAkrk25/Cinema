@@ -33,6 +33,11 @@ public class BookSeatMenuEntry implements InterfaceMenuEntry {
     }
 
     @Override
+    public void printMenu() {
+
+    }
+
+    @Override
     public String menuEntryName() {
         return "Zarezerwuj miejsce.";
     }

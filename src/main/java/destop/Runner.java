@@ -64,9 +64,7 @@ public class Runner {
 
         FilmShowRoom filmShowRoom = filmShowRoomService.getFilmShowRoom(1);
 
-        if (krzyżacy.isPresent()){
-            seansService.addSeans(LocalDateTime.parse("2020-10-11T11:11:00"), krzyżacy.get(), filmShowRoom);
-        }
+        krzyżacy.ifPresent(movie -> seansService.addSeans(LocalDateTime.parse("2020-10-11T11:11:00"), movie, filmShowRoom));
 
 //        Działa :)
 //        AddClientMenuEntry addClientMenuEntry = new AddClientMenuEntry(clientService);
