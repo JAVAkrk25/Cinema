@@ -23,15 +23,14 @@ public class LoginMenu implements InterfaceMenuEntry {
         System.out.print("\n");
         MenuFactory.getFullLine();
         MenuFactory.getTitleLine(menuEntryName());
-        MenuFactory.getPointLine("1.", "Logowania stałego użykownika.", null, null);
-        MenuFactory.getPointLine("2.", "Logowanie nowego użytkownika.", null, null);
+        MenuFactory.getPointLine("1.", "Podaj adres email.", null, null);
+        MenuFactory.getPointLine("2.", "Powrót do poprzedniego menu.", null, null);
         MenuFactory.getPointLine("3.", "Wyjście.", null, null);
         MenuFactory.getFullLine();
         MenuFactory.getTitleLine("Wybierz numer opcji:");
         MenuFactory.getFullLine();
         userContext.setChoice(scanner.nextLine());
         new LoginMenuLogic().options(userContext);
-
     }
 
     @Override

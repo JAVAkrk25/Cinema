@@ -10,6 +10,8 @@ public class CinemaRunner {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("SqtyJ7nmGK");
 
-        new StartMenu().printMenu();
+        StartMenu startMenu = new StartMenu();
+        startMenu.printCinemaName();
+        startMenu.printMenu();
     }
 }

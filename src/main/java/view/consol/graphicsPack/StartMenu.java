@@ -22,7 +22,6 @@ public class StartMenu implements InterfaceMenuEntry {
         Scanner scanner = new Scanner(System.in);
         UserContext userContext = new UserContext();
 
-        printCinemaName();
         System.out.print("\n");
         MenuFactory.getFullLine();
         MenuFactory.getTitleLine(menuEntryName());
@@ -41,7 +40,7 @@ public class StartMenu implements InterfaceMenuEntry {
         return "Logowanie:";
     }
 
-    private void printCinemaName() {
+    public void printCinemaName() {
         System.out.print("\n\n\n");
 
         MenuFactory.getFullLine();
