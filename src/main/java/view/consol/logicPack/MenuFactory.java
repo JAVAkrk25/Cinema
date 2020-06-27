@@ -37,6 +37,7 @@ public abstract class MenuFactory implements InterfaceMenuEntry {
     }
 
 
+
     private static String centreLIne(@NonNull String centre) {
 
         StringBuilder element = new StringBuilder(SYMBOL);
