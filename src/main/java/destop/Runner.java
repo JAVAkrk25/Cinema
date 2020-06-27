@@ -5,6 +5,7 @@ import domain.Movie;
 import logic.*;
 import persistence.*;
 import view.consol.logicPack.ClientService.AddClientMenuEntry;
+import view.consol.logicPack.UserContext;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -65,6 +66,7 @@ public class Runner {
 
 
         AddClientMenuEntry addClientMenuEntry = new AddClientMenuEntry(clientService);
+        addClientMenuEntry.options(new UserContext());
 
 
     }

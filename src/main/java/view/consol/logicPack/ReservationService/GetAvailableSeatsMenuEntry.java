@@ -13,7 +13,7 @@ public class GetAvailableSeatsMenuEntry implements InterfaceMenuEntry {
     @Override
     public void options(UserContext userContext) {
 
-        reservationService.getAvailableSeats(userContext.getChosenSeans());
+        reservationService.getAvailableSeats(userContext.getChosenSeans()).forEach(System.out::println);
     }
 
     @Override

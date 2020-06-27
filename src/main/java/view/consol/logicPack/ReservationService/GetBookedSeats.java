@@ -13,11 +13,11 @@ public class GetBookedSeats implements InterfaceMenuEntry {
 
     @Override
     public void options(UserContext userContext) {
-        reservationService.getAvailableSeats(userContext.getChosenSeans());
+        reservationService.getBookedSeats(userContext.getChosenSeans()).forEach(System.out::println);
     }
 
     @Override
     public String menuEntryName() {
-        return null;
+        return "Wyświetlanie zarezerwowanych miejsc na seansie";
     }
 }
