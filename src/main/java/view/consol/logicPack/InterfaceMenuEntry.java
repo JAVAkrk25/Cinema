@@ -5,7 +5,7 @@ public interface InterfaceMenuEntry {
     int LINE_LENGTH = 85;
     String SYMBOL = "*";
 
-    void options();
+    void options(UserContext userContext);
 
     String menuEntryName();
 }

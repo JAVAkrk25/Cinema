@@ -4,6 +4,7 @@ import logic.FilmShowRoomService;
 import lombok.RequiredArgsConstructor;
 import view.consol.logicPack.InterfaceMenuEntry;
 import view.consol.logicPack.MenuFactory;
+import view.consol.logicPack.UserContext;
 
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class AddSeatsMenuEntry implements InterfaceMenuEntry {
     private final FilmShowRoomService filmShowRoomService;
 
     @Override
-    public void options() {
+    public void options(UserContext userContext) {
         Scanner scanner = new Scanner(System.in);
         MenuFactory.getTitleLine("Dodaj siedzenie do sali kinowej:");
         MenuFactory.getTitleLine("Podaj numer rzędu, numer siedzenia, indentyfikator sali kinowej.");

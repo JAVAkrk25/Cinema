@@ -3,6 +3,7 @@ package view.consol.graphicsPack;
 import lombok.RequiredArgsConstructor;
 import view.consol.logicPack.InterfaceMenuEntry;
 import view.consol.logicPack.MenuFactory;
+import view.consol.logicPack.UserContext;
 
 import java.util.List;
 import java.util.Scanner;
@@ -15,11 +16,11 @@ public class StartMenu implements InterfaceMenuEntry {
     Scanner scanner = new Scanner(System.in);
 
     @Override
-    public void options() {
+    public void options(UserContext userContext) {
         printDescription();
-        do {
-
-        }
+//        do {
+//
+//        }
     }
 
     @Override
@@ -32,7 +33,7 @@ public class StartMenu implements InterfaceMenuEntry {
         System.out.print("\n\n");
         MenuFactory.getFullLine();
         MenuFactory.getTitleLine(menuEntryName());
-        MenuFactory.getPointLine();
+//        MenuFactory.getPointLine();
     }
 
     private void printDescription() {

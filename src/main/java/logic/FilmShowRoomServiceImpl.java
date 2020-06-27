@@ -36,4 +36,9 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
                 .stream().map(Mapper::from)
                 .collect(Collectors.toSet());
     }
+
+    @Override
+    public FilmShowRoom getFilmShowRoom(Integer id) {
+        return Mapper.from(filmShowRoomDAO.findById(id));
+    }
 }

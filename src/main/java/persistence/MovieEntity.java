@@ -18,6 +18,7 @@ public class MovieEntity {
     private Integer movieId;
     private String title;
     private String director;
+    @Column(length = 2048)
     private String description;
 
     @OneToMany(mappedBy = "movie")
