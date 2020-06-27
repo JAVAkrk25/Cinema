@@ -20,6 +20,12 @@ public class GetAllSeansMenuEntry implements InterfaceMenuEntry {
     }
 
     @Override
+    public void printMenu() {
+
+
+    }
+
+    @Override
     public String menuEntryName() {
         return "Wyświetl wsystkie seanse";
     }

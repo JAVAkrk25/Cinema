@@ -17,6 +17,11 @@ public class GetBookedSeats implements InterfaceMenuEntry {
     }
 
     @Override
+    public void printMenu() {
+
+    }
+
+    @Override
     public String menuEntryName() {
         return "Wyświetlanie zarezerwowanych miejsc na seansie";
     }

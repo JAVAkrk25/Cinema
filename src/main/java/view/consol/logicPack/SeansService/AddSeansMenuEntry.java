@@ -39,6 +39,11 @@ public class AddSeansMenuEntry implements InterfaceMenuEntry {
     }
 
     @Override
+    public void printMenu() {
+
+    }
+
+    @Override
     public String menuEntryName() {
         return null;
     }
