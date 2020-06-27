@@ -1,6 +1,7 @@
 package logic;
 
 import domain.FilmShowRoom;
+import domain.Movie;
 import domain.Seat;
 import lombok.RequiredArgsConstructor;
 import persistence.FilmShowRoomDAO;
@@ -41,4 +42,10 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     public FilmShowRoom getFilmShowRoom(Integer id) {
         return Mapper.from(filmShowRoomDAO.findById(id));
     }
+
+    @Override
+    public FilmShowRoom findByFilmShowRoomId(Integer filmShowRoomId) {
+        return Mapper.from(filmShowRoomDAO.findById(filmShowRoomId));
+    }
+
 }
