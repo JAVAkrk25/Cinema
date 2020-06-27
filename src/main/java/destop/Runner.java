@@ -1,11 +1,15 @@
 package destop;
 
+import domain.FilmShowRoom;
+import domain.Movie;
 import logic.*;
 import persistence.*;
 import view.consol.logicPack.ClientService.AddClientMenuEntry;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class Runner {
     public static void main(String[] args) {
@@ -51,10 +55,18 @@ public class Runner {
 
         SeansDAO seansDAO = new SeansDAOImpl(emf);
         SeansService seansService = new SeansServiceImpl(seansDAO);
-//        seansService.addSeans(LocalDateTime.parse("1990-10-11 11:11"), Movie.class, FilmShowRoom.class);
+        Optional<Movie> krzyżacy = movieService.getAllMovies().stream().filter(movie -> movie.getTitle().equals("Krzyżacy")).findAny();
+
+        FilmShowRoom filmShowRoom = filmShowRoomService.getFilmShowRoom(1);
+
+        if (krzyżacy.isPresent()){
+            seansService.addSeans(LocalDateTime.parse("2020-10-11T11:11:00"), krzyżacy.get(), filmShowRoom);
+        }
+
 
         AddClientMenuEntry addClientMenuEntry = new AddClientMenuEntry(clientService);
-        addClientMenuEntry.options();
+
 
     }
 }
+
