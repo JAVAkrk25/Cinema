@@ -24,5 +24,4 @@ public class ClientServiceImpl implements ClientService {
             clientDAO.delete(found);
         }
     }
-
 }
