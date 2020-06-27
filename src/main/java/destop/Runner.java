@@ -1,27 +1,24 @@
 package destop;
 
-import domain.FilmShowRoom;
-import domain.Movie;
 import logic.*;
 import persistence.*;
 import view.consol.logicPack.ClientService.AddClientMenuEntry;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.time.LocalDateTime;
 
 public class Runner {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("SqtyJ7nmGK");
-        ClientDAO clientDAO = new ClientDAOImpl(emf);
 
+        ClientDAO clientDAO = new ClientDAOImpl(emf);
         ClientService clientService = new ClientServiceImpl(clientDAO);
         clientService.addClient("Janina", "Nowak", "janina.nowak@jmail.pl", "999666666");
         clientService.addClient("Andrzej", "Mickiewicz", "andrzej.miki@jmail.pl", "666000666");
         clientService.addClient("Juliusz", "Słowacki", "juliusz.slowacki@jmail.pl", "666666666");
 
-        SeatDAO seatDAO = new SeatDAOImpl(emf);
 
+        SeatDAO seatDAO = new SeatDAOImpl(emf);
         FilmShowRoomDAO filmShowRoomDAO = new FilmShowRoomImp(emf);
         FilmShowRoomService filmShowRoomService = new FilmShowRoomServiceImpl(filmShowRoomDAO, seatDAO);
         filmShowRoomService.addFilmShowRoom();

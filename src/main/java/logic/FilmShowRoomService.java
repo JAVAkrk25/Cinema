@@ -11,4 +11,6 @@ public interface FilmShowRoomService {
     void addSeats(Integer row, Integer seatNumber, Integer filmShowRoomId);
 
     Set<Seat> getAllSeats(Integer filmShowRoomId); //na postawie nr sali zwroci nam wszystkie mozliwe miejsca w sali, czyli kolekcje dostepnych dla sali siedzen
+
+    FilmShowRoom getFilmShowRoom(Integer id);
 }
