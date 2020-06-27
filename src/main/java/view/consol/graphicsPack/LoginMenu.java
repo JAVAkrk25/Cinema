@@ -11,7 +11,6 @@ public class LoginMenu implements InterfaceMenuEntry {
 
     @Override
     public void options(UserContext userContext) {
-
     }
 
     @Override

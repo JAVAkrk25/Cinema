@@ -66,14 +66,14 @@ public class Runner {
 
         krzyżacy.ifPresent(movie -> seansService.addSeans(LocalDateTime.parse("2020-10-11T11:11:00"), movie, filmShowRoom));
 
-//        Działa :)
-//        AddClientMenuEntry addClientMenuEntry = new AddClientMenuEntry(clientService);
-//        addClientMenuEntry.options(new UserContext());
 
-//
-//         Działa :)
-//        AddMovieMenuEntry addMovieMenuEntry = new AddMovieMenuEntry(movieService);
-//        addMovieMenuEntry.options(new UserContext());
+        AddClientMenuEntry addClientMenuEntry = new AddClientMenuEntry(clientService);
+        addClientMenuEntry.options(new UserContext());
+
+
+
+        AddMovieMenuEntry addMovieMenuEntry = new AddMovieMenuEntry(movieService);
+        addMovieMenuEntry.options(new UserContext());
 
         AddSeatsMenuEntry addSeatsMenuEntry = new AddSeatsMenuEntry(filmShowRoomService);
         addSeatsMenuEntry.options(new UserContext());

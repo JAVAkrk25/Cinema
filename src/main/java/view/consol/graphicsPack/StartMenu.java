@@ -27,7 +27,11 @@ public class StartMenu implements InterfaceMenuEntry {
         MenuFactory.getTitleLine(menuEntryName());
         MenuFactory.getPointLine("1.", "Logowania stałego użykownika.", null, null);
         MenuFactory.getPointLine("2.", "Logowanie nowego użytkownika.", null, null);
-        MenuFactory.getPointLine("3.", "Wyjście.", null, null);
+        MenuFactory.getPointLine("3.", "Dodaj film.", null, null);
+        MenuFactory.getPointLine("4.", "Dodaj seans.", null, null);
+        MenuFactory.getPointLine("5.", "Dodaj miejsce.", null, null);
+        MenuFactory.getPointLine("6.", "Zarezerwuj miejsce.", null, null);
+        MenuFactory.getPointLine("7.", "Wyjście.", null, null);
         MenuFactory.getFullLine();
         MenuFactory.getTitleLine("Wybierz numer opcji:");
         MenuFactory.getFullLine();
