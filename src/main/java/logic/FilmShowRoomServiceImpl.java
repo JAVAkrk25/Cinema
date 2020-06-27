@@ -44,7 +44,7 @@ public class FilmShowRoomServiceImpl implements FilmShowRoomService {
     }
 
     @Override
-    public FilmShowRoom findByFilmShowRoomId(Integer filmShowRoomId) {
+    public FilmShowRoom findById(FilmShowRoom filmShowRoomId) {
         return Mapper.from(filmShowRoomDAO.findById(filmShowRoomId));
     }
 
