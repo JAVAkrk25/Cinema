@@ -1,5 +1,6 @@
 package view.consol.logicPack.Logic;
 
+import view.consol.graphicsPack.LoginMenu;
 import view.consol.logicPack.InterfaceMenuEntry;
 import view.consol.logicPack.MenuFactory;
 import view.consol.logicPack.UserContext;
@@ -12,8 +13,9 @@ public class StartMenuLogic implements InterfaceMenuEntry {
 
     @Override
     public void options(UserContext userContext) {
-        switch (userContext.getChoice()){
+        switch (userContext.getChoice()) {
             case "1":
+                new LoginMenu().printMenu();
                 break;
             case "2":
                 break;
@@ -22,8 +24,8 @@ public class StartMenuLogic implements InterfaceMenuEntry {
                 break;
             default:
                 MenuFactory.getFullLine();
-                MenuFactory.getInfoLine("Została wybrana błędna opcja.",null,null,null);
-                MenuFactory.getInfoLine("Wybierz ponownie:",null,null,null);
+                MenuFactory.getInfoLine("Została wybrana błędna opcja.", null, null, null);
+                MenuFactory.getInfoLine("Wybierz ponownie:", null, null, null);
                 MenuFactory.getFullLine();
         }
     }
