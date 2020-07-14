@@ -1,5 +1,6 @@
 package persistence;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @Table(name = "FilmShowroom")
 public class FilmShowRoomEntity {
     @Id
@@ -22,8 +24,4 @@ public class FilmShowRoomEntity {
 
     @OneToMany(mappedBy = "filmShowRoomEntity")
     private Set<SeatEntity> seats;
-
-      public FilmShowRoomEntity(Integer filmShowRoomId) {
-        this.filmShowRoomId = filmShowRoomId;
-    }
 }

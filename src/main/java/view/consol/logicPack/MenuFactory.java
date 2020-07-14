@@ -6,7 +6,7 @@ import lombok.NonNull;
 import java.util.ArrayList;
 
 @NoArgsConstructor
-public abstract class MenuFactory implements InterfaceMenuEntry {
+public abstract class MenuFactory implements MenuEntry {
 
     public static void getInfoLine(String element1, String element2, String element3, String element4) {
         System.out.println(infoLine(element1, element2, element3, element4));

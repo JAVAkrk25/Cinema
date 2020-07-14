@@ -1,20 +1,17 @@
 package view.consol.logicPack.SeansService;
 
-import domain.Movie;
 import logic.SeansService;
 import lombok.RequiredArgsConstructor;
-import view.consol.logicPack.InterfaceMenuEntry;
-import view.consol.logicPack.MenuFactory;
+import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.UserContext;
 
-import java.util.Scanner;
-
 @RequiredArgsConstructor
-public class GetAllSeansMenuEntry implements InterfaceMenuEntry {
+public class GetAllSeansMenuEntry implements MenuEntry {
     private final SeansService seansService;
+    UserContext userContext;
 
     @Override
-    public void options(UserContext userContext) {
+    public void options() {
 
         seansService.getAllSeans(userContext.getChosenMovie());
     }

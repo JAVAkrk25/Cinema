@@ -1,8 +1,8 @@
 package logic;
 
 import domain.FilmShowRoom;
-import domain.Seans;
 import domain.Movie;
+import domain.Seans;
 
 import java.time.LocalDateTime;
 import java.util.Set;

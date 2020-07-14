@@ -1,10 +1,9 @@
 package persistence;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import persistence.ReservationEntity;
-import persistence.FilmShowRoomEntity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -14,6 +13,11 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
+
+@NamedQuery(name = "SeatEntity.getAllSeats",
+        query = "SELECT s FROM SeatEntity s WHERE s.filmShowRoomEntity.filmShowRoomId = :filmShowRoomId")
+
 @Table(name = "Seat")
 public class SeatEntity {
 
@@ -28,12 +32,6 @@ public class SeatEntity {
     @ManyToOne
     private FilmShowRoomEntity filmShowRoomEntity;
 
-    @OneToMany (mappedBy = "seatEntity")
+    @OneToMany(mappedBy = "seatEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
-
-    public SeatEntity( Integer row, Integer seatNumber, FilmShowRoomEntity filmShowRoomEntity) {
-        this.row = row;
-        this.seatNumber = seatNumber;
-        this.filmShowRoomEntity = filmShowRoomEntity;
-    }
 }

@@ -1,7 +1,6 @@
 package logic;
 
 import domain.FilmShowRoom;
-import domain.Movie;
 import domain.Seat;
 import lombok.RequiredArgsConstructor;
 import persistence.FilmShowRoomDAO;
@@ -9,7 +8,6 @@ import persistence.FilmShowRoomEntity;
 import persistence.SeatDAO;
 import persistence.SeatEntity;
 import utils.Mapper;
-import view.consol.logicPack.InterfaceMenuEntry;
 
 import java.util.Set;
 import java.util.stream.Collectors;

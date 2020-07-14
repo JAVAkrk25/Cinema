@@ -1,33 +1,23 @@
 package persistence;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-public class MovieDAOImpl extends AbstractEntityDao<MovieEntity> implements MovieDAO {
+public class MovieDAOImpl extends EntityDAOImpl<MovieEntity> implements MovieDAO {
 
-    public MovieDAOImpl(EntityManagerFactory entityManagerFactory) {
-        super(entityManagerFactory, MovieEntity.class);
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    public MovieDAOImpl() {
+        super(MovieEntity.class);
     }
 
     @Override
-    public MovieEntity findByMovieTitle(String name) {
-            EntityManager entityManager = null;
-            try {
-                entityManager = entityManagerFactory.createEntityManager();
-                EntityTransaction transaction = entityManager.getTransaction();
-                transaction.begin();
+    public MovieEntity findByMovieTitle(String title) {
 
-                TypedQuery<MovieEntity> query = entityManager.createQuery("FROM MovieEntity e WHERE c.title=:title", MovieEntity.class);
-                query.setParameter("title", name);
-                MovieEntity foundEntity = query.getSingleResult();
-                transaction.commit();
-                return foundEntity;
-            } finally {
-                if (entityManager != null){
-                    entityManager.close();
-                }
-            }
-        }
+        TypedQuery<MovieEntity> query = entityManager.createQuery("FROM MovieEntity WHERE MovieEntity.title =:title", MovieEntity.class);
+        query.setParameter("title", title);
+        return query.getSingleResult();
     }
+}

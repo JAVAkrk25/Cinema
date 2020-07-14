@@ -1,10 +1,6 @@
 package view.consol;
 
-import logic.ClientService;
-import logic.ClientServiceImpl;
-import persistence.ClientDAO;
 import view.consol.graphicsPack.CinemaHallSeats;
-import view.consol.logicPack.ClientService.AddClientMenuEntry;
 import view.consol.logicPack.MenuFactory;
 
 public class RunnerTestMenu {

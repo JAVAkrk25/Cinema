@@ -4,8 +4,10 @@ import domain.Client;
 import domain.Movie;
 import domain.Seans;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Getter
 @Setter
 public class UserContext {

@@ -42,16 +42,6 @@ public class Mapper {
                 new MovieEntity(movie.getMovieId(),movie.getTitle(), movie.getDirector(), movie.getDescription());
     }
 
-    public static Client from(ClientEntity clientEntity) {
-        return clientEntity == null ? null :
-                new Client(clientEntity.getClientId(), clientEntity.getName(), clientEntity.getSurname(), clientEntity.getEmail(), clientEntity.getPhone());
-    }
-
-    public static ClientEntity from(Client client) {
-        return client == null ? null :
-                new ClientEntity(client.getClientId(), client.getName(), client.getSurname(), client.getEmail(), client.getPhone());
-    }
-
     public static FilmShowRoom from(FilmShowRoomEntity fsr) {
         return fsr == null ? null :
                 new FilmShowRoom(fsr.getFilmShowRoomId());

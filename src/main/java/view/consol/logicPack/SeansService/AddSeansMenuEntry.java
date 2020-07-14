@@ -1,12 +1,10 @@
 package view.consol.logicPack.SeansService;
 
-import domain.FilmShowRoom;
-import logic.ClientService;
 import logic.FilmShowRoomService;
 import logic.MovieService;
 import logic.SeansService;
 import lombok.RequiredArgsConstructor;
-import view.consol.logicPack.InterfaceMenuEntry;
+import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.MenuFactory;
 import view.consol.logicPack.UserContext;
 
@@ -14,15 +12,16 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 @RequiredArgsConstructor
-public class AddSeansMenuEntry implements InterfaceMenuEntry {
+public class AddSeansMenuEntry implements MenuEntry {
 
     private final SeansService seansService;
     private final MovieService movieService;
     private final FilmShowRoomService filmShowRoomService;
+    UserContext userContext;
 
 
     @Override
-    public void options(UserContext userContext) {
+    public void options() {
         Scanner scanner = new Scanner(System.in);
         MenuFactory.getTitleLine("Dodaj seans");
         MenuFactory.getTitleLine("Podaj datę i godzinę w formacie YYYY-MM-DDTHH:mm:ss, nazwę filmu, numer sali (1, 2 lub 3)");

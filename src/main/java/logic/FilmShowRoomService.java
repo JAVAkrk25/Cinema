@@ -1,7 +1,6 @@
 package logic;
 
 import domain.FilmShowRoom;
-import domain.Movie;
 import domain.Seat;
 
 import java.util.Set;
@@ -15,7 +14,7 @@ public interface FilmShowRoomService {
 
     FilmShowRoom getFilmShowRoom(Integer id);
 
-    FilmShowRoom findById (Integer filmShowRoomId);
+    FilmShowRoom findById(Integer filmShowRoomId);
 
 
 }

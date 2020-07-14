@@ -1,41 +1,33 @@
 package persistence;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 
-public class ReservationDAOImpl extends  AbstractEntityDao<ReservationEntity> implements ReservationDAO {
+public class ReservationDAOImpl extends EntityDAOImpl<ReservationEntity> implements ReservationDAO {
 
-    private final FilmShowRoomDAO filmShowRoomDAO;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    public ReservationDAOImpl(EntityManagerFactory entityManagerFactory, FilmShowRoomDAO filmShowRoomDAO) {
-        super(entityManagerFactory, ReservationEntity.class);
-        this.filmShowRoomDAO = filmShowRoomDAO;
+    public ReservationDAOImpl() {
+        super(ReservationEntity.class);
     }
 
     @Override
     public Set<SeatEntity> getBookedSeats(SeansEntity seans) {
-        EntityManager seanss = null;
-        try {
-            seanss = entityManagerFactory.createEntityManager();
-            seanss.getTransaction().begin();
-            TypedQuery<SeatEntity> query = seanss.createQuery("SELECT r.seatEntity FROM ReservationEntity r WHERE r.seansEntity = :seansEntity", SeatEntity.class);
-            query.setParameter("seansEntity", seans);
-            Set<SeatEntity> result = query.getResultStream().collect(Collectors.toSet());
-            seanss.getTransaction().commit();
-            return result;
-        } finally {
-            if (seanss != null) {
-                seanss.close();
-            }
-        }
+
+        TypedQuery<SeatEntity> query = entityManager.createNamedQuery("Reservation.SelectBookedSeatBySeans", SeatEntity.class);
+        query.setParameter("seansEntity", seans);
+        return query.getResultStream().collect(Collectors.toSet());
     }
 
     @Override
     public Set<SeatEntity> getAvailableSeats(SeansEntity seans) {
+
+        FilmShowRoomDAO filmShowRoomDAO = new FilmShowRoomDAOImp();
         Set<SeatEntity> allSeats = filmShowRoomDAO.getAllSeats(seans.getFilmShowRoomEntity().getFilmShowRoomId());
         Set<SeatEntity> bookedSeats = getBookedSeats(seans);
         allSeats.removeAll(bookedSeats);

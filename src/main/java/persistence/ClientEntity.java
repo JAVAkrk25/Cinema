@@ -1,5 +1,6 @@
 package persistence;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @Table(name = "Client")
 public class ClientEntity {
 
@@ -22,15 +24,9 @@ public class ClientEntity {
     private String surname;
     private String email;
     private String phone;
+    private String login;
+    private String password;
 
     @OneToMany(mappedBy = "clientEntity")
     private Set<ReservationEntity> reservationEntities = new HashSet<>();
-
-    public ClientEntity(Integer clientId, String name, String surname, String email, String phone) {
-        this.clientId = clientId;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.phone = phone;
-    }
 }

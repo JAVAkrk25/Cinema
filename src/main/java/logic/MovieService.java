@@ -1,9 +1,7 @@
 package logic;
 
-import domain.Client;
 import domain.Movie;
 
-import java.util.List;
 import java.util.Set;
 
 public interface MovieService {
@@ -11,6 +9,6 @@ public interface MovieService {
 
     Set<Movie> getAllMovies();
 
-    Movie findByMovieTitle (String title);
+    Movie findByMovieTitle(String title);
 
 }

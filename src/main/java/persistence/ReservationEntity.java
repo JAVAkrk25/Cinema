@@ -1,5 +1,6 @@
 package persistence;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
+
+@NamedQuery(name = "Reservation.SelectBookedSeatBySeans",
+        query = "SELECT r.seatEntity FROM ReservationEntity r WHERE r.seansEntity = :seansEntity")
+
 @Table(name = "Reservation")
 public class ReservationEntity {
     @Id
@@ -24,10 +30,4 @@ public class ReservationEntity {
 
     @ManyToOne
     private SeatEntity seatEntity;
-
-    public ReservationEntity(SeansEntity seansEntity, ClientEntity clientEntity, SeatEntity seatEntity) {
-        this.seansEntity = seansEntity;
-        this.clientEntity = clientEntity;
-        this.seatEntity = seatEntity;
-    }
 }

@@ -2,19 +2,20 @@ package view.consol.logicPack.MovieService;
 
 import logic.MovieService;
 import lombok.RequiredArgsConstructor;
-import view.consol.logicPack.InterfaceMenuEntry;
+import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.MenuFactory;
 import view.consol.logicPack.UserContext;
 
 import java.util.Scanner;
 
 @RequiredArgsConstructor
-public class AddMovieMenuEntry implements InterfaceMenuEntry {
+public class AddMovieMenuEntry implements MenuEntry {
 
     private final MovieService movieService;
+    UserContext userContext;
 
     @Override
-    public void options(UserContext userContext) {
+    public void options() {
         Scanner scanner = new Scanner(System.in);
         MenuFactory.getTitleLine("Dodaj film.");
         MenuFactory.getTitleLine("Podaj tytuł, reżysera, opis:");

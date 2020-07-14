@@ -3,16 +3,17 @@ package view.consol.logicPack.ReservationService;
 
 import logic.ReservationService;
 import lombok.RequiredArgsConstructor;
-import view.consol.logicPack.InterfaceMenuEntry;
+import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.UserContext;
 
 @RequiredArgsConstructor
-public class GetBookedSeats implements InterfaceMenuEntry {
+public class GetBookedSeats implements MenuEntry {
 
     private final ReservationService reservationService;
+    UserContext userContext;
 
     @Override
-    public void options(UserContext userContext) {
+    public void options() {
         reservationService.getBookedSeats(userContext.getChosenSeans()).forEach(System.out::println);
     }
 

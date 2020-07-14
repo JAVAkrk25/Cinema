@@ -2,19 +2,20 @@ package view.consol.logicPack.ReservationService;
 
 import logic.ReservationService;
 import lombok.RequiredArgsConstructor;
-import view.consol.logicPack.InterfaceMenuEntry;
+import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.MenuFactory;
 import view.consol.logicPack.UserContext;
 
 import java.util.Scanner;
 
 @RequiredArgsConstructor
-public class BookSeatMenuEntry implements InterfaceMenuEntry {
+public class BookSeatMenuEntry implements MenuEntry {
 
     private final ReservationService reservationService;
+    UserContext userContext;
 
     @Override
-    public void options(UserContext userContext) {
+    public void options() {
         Scanner scanner = new Scanner(System.in);
         MenuFactory.getTitleLine("Zarezerwuj miejsce.");
         MenuFactory.getTitleLine("Podaj identyfikator klienta, identyfikator seansu, identyfikator siedzenia:");
