@@ -1,0 +1,36 @@
+package persistence.reservation;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import persistence.seans.SeansEntity;
+import persistence.seat.SeatEntity;
+import persistence.client.ClientEntity;
+
+import javax.persistence.*;
+
+@Entity
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+
+@NamedQuery(name = "Reservation.SelectBookedSeatBySeans",
+        query = "SELECT r.seatEntity FROM ReservationEntity r WHERE r.seansEntity = :seansEntity")
+
+@Table(name = "Reservation")
+public class ReservationEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer reservationId;
+
+    @ManyToOne
+    private SeansEntity seansEntity;
+
+    @ManyToOne
+    private ClientEntity clientEntity;
+
+    @ManyToOne
+    private SeatEntity seatEntity;
+}

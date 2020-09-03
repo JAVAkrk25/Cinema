@@ -1,6 +1,6 @@
 package view.consol.logicPack.ClientService;
 
-import logic.ClientServiceImpl;
+import logic.client.ClientServiceImpl;
 import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.MenuFactory;
 

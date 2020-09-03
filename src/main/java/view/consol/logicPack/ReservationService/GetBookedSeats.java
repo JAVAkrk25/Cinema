@@ -1,7 +1,7 @@
 package view.consol.logicPack.ReservationService;
 
 
-import logic.ReservationService;
+import logic.reservation.ReservationService;
 import lombok.RequiredArgsConstructor;
 import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.UserContext;

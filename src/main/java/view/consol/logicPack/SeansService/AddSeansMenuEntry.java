@@ -1,8 +1,8 @@
 package view.consol.logicPack.SeansService;
 
-import logic.FilmShowRoomService;
-import logic.MovieService;
-import logic.SeansService;
+import logic.filmShowRoom.FilmShowRoomService;
+import logic.movie.MovieService;
+import logic.seans.SeansService;
 import lombok.RequiredArgsConstructor;
 import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.MenuFactory;
@@ -24,14 +24,18 @@ public class AddSeansMenuEntry implements MenuEntry {
     public void options() {
         Scanner scanner = new Scanner(System.in);
         MenuFactory.getTitleLine("Dodaj seans");
-        MenuFactory.getTitleLine("Podaj datę i godzinę w formacie YYYY-MM-DDTHH:mm:ss, nazwę filmu, numer sali (1, 2 lub 3)");
+        MenuFactory.getTitleLine("Podaj nazwę filmu, numer sali (1, 2 lub 3) oraz " +
+                "datę i godzinę rozpoczęcia w formacie YYYY-MM-DDTHH:mm:ss");
         MenuFactory.getTitleLine("Podawane dane rozdziel przecinkami");
         MenuFactory.getEmptyLine();
         String element = scanner.nextLine();
         String[] split = element.split(",");
-        if (split.length == 3){
-            seansService.addSeans(LocalDateTime.parse(split[0].trim()), movieService.findByMovieTitle(split[1].trim()), filmShowRoomService.findById(Integer.parseInt(split[2].trim())));
-        }else {
+        if (split.length == 3) {
+            seansService.addSeans(
+                    movieService.findByTitle(split[1].trim()),
+                    filmShowRoomService.getFilmShowRoom(Integer.parseInt(split[2].trim())),
+                    LocalDateTime.parse(split[0].trim()));
+        } else {
             MenuFactory.getEmptyLine();
             MenuFactory.getTitleLine("Błędne dane.");
         }

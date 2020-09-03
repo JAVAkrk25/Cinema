@@ -1,8 +1,8 @@
 package view.consol.logicPack;
 
-import domain.Client;
-import domain.Movie;
-import domain.Seans;
+import domain.client.Client;
+import domain.movie.Movie;
+import domain.seans.Seans;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

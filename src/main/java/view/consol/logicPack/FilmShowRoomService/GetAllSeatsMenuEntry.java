@@ -1,6 +1,6 @@
 package view.consol.logicPack.FilmShowRoomService;
 
-import logic.FilmShowRoomService;
+import logic.filmShowRoom.FilmShowRoomService;
 import lombok.RequiredArgsConstructor;
 import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.MenuFactory;

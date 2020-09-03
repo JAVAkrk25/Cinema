@@ -1,6 +1,6 @@
 package view.consol.logicPack.SeansService;
 
-import logic.SeansService;
+import logic.seans.SeansService;
 import lombok.RequiredArgsConstructor;
 import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.UserContext;

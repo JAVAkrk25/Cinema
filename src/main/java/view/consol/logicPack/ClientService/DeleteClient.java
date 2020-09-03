@@ -1,7 +1,7 @@
 package view.consol.logicPack.ClientService;
 
-import domain.Client;
-import logic.ClientServiceImpl;
+import domain.client.Client;
+import logic.client.ClientServiceImpl;
 import lombok.RequiredArgsConstructor;
 import view.consol.logicPack.MenuEntry;
 import view.consol.logicPack.MenuFactory;
